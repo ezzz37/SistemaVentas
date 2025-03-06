@@ -1,3 +1,5 @@
+using System.Data.SqlClient;
+
 namespace CapaPresentacion
 {
     internal static class Program
@@ -12,6 +14,7 @@ namespace CapaPresentacion
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize(); 
             Application.Run(new Login());
+
         }
     }
 }

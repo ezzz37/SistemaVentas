@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using CapaNegocio;
+using CapaEntidad;
 // Agrega la directiva using si es necesario
 // using CapaPresentacion.Vistas;
 
@@ -31,12 +34,24 @@ namespace CapaPresentacion
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            Inicio form = new Inicio();
 
-            form.Show();
-            this.Hide();
+            List<Usuario> TEST = new CN_Usuario().Listar();
 
-            form.FormClosing += frm_closing;
+            Usuario ousuario = new CN_Usuario().Listar().Where(u => u.Documento == txtDocumento.Text && u.Clave == txtClave.Text).FirstOrDefault();
+
+            if (ousuario != null)
+            {
+                Inicio form = new Inicio();
+
+                form.Show();
+                this.Hide();
+
+                form.FormClosing += frm_closing;
+            }
+            else
+            {
+                MessageBox.Show("No se encontro el Usuario", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void frm_closing(object sender, FormClosingEventArgs e)
