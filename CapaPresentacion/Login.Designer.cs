@@ -31,8 +31,8 @@
             label1 = new Label();
             label2 = new Label();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtDocumento = new TextBox();
+            txtClave = new TextBox();
             label3 = new Label();
             label4 = new Label();
             Ingresar = new FontAwesome.Sharp.IconButton();
@@ -76,20 +76,21 @@
             iconPictureBox1.TabIndex = 2;
             iconPictureBox1.TabStop = false;
             // 
-            // textBox1
+            // txtDocumento
             // 
-            textBox1.Location = new Point(287, 83);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(263, 23);
-            textBox1.TabIndex = 3;
+            txtDocumento.Location = new Point(287, 83);
+            txtDocumento.Name = "txtDocumento";
+            txtDocumento.Size = new Size(263, 23);
+            txtDocumento.TabIndex = 3;
+            txtDocumento.TextChanged += textBox1_TextChanged;
             // 
-            // textBox2
+            // txtClave
             // 
-            textBox2.Location = new Point(287, 143);
-            textBox2.Name = "textBox2";
-            textBox2.PasswordChar = '*';
-            textBox2.Size = new Size(263, 23);
-            textBox2.TabIndex = 4;
+            txtClave.Location = new Point(287, 143);
+            txtClave.Name = "txtClave";
+            txtClave.PasswordChar = '*';
+            txtClave.Size = new Size(263, 23);
+            txtClave.TabIndex = 4;
             // 
             // label3
             // 
@@ -112,6 +113,7 @@
             // Ingresar
             // 
             Ingresar.BackColor = Color.Blue;
+            Ingresar.Cursor = Cursors.Hand;
             Ingresar.FlatAppearance.BorderColor = Color.Black;
             Ingresar.FlatAppearance.CheckedBackColor = Color.Black;
             Ingresar.FlatAppearance.MouseDownBackColor = Color.Black;
@@ -122,7 +124,7 @@
             Ingresar.IconColor = Color.White;
             Ingresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             Ingresar.IconSize = 21;
-            Ingresar.Location = new Point(315, 190);
+            Ingresar.Location = new Point(304, 183);
             Ingresar.Name = "Ingresar";
             Ingresar.Size = new Size(100, 33);
             Ingresar.TabIndex = 7;
@@ -135,6 +137,7 @@
             // Cancelar
             // 
             Cancelar.BackColor = Color.Red;
+            Cancelar.Cursor = Cursors.Hand;
             Cancelar.FlatAppearance.BorderColor = Color.Black;
             Cancelar.FlatAppearance.CheckedBackColor = Color.Black;
             Cancelar.FlatAppearance.MouseDownBackColor = Color.Black;
@@ -145,7 +148,7 @@
             Cancelar.IconColor = Color.White;
             Cancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             Cancelar.IconSize = 21;
-            Cancelar.Location = new Point(421, 190);
+            Cancelar.Location = new Point(428, 183);
             Cancelar.Name = "Cancelar";
             Cancelar.Size = new Size(106, 33);
             Cancelar.TabIndex = 8;
@@ -165,8 +168,8 @@
             Controls.Add(Ingresar);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtClave);
+            Controls.Add(txtDocumento);
             Controls.Add(iconPictureBox1);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -184,8 +187,8 @@
         private Label label1;
         private Label label2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtDocumento;
+        private TextBox txtClave;
         private Label label3;
         private Label label4;
         private FontAwesome.Sharp.IconButton Ingresar;
