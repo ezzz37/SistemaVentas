@@ -1,16 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CapaEntidad;
-using System.Configuration;
 using System.Data;
+using CapaEntidad;
 using Microsoft.Data.SqlClient;
-using Microsoft.Extensions.Configuration;
-using System.IO;
-using System.Reflection.Metadata.Ecma335;
-
 
 namespace CapaDatos
 {
@@ -20,9 +12,10 @@ namespace CapaDatos
         {
             List<Usuario> lista = new List<Usuario>();
 
-            using (SqlConnection oconexion = new SqlConnection())
+            try
             {
-                try{
+                using (SqlConnection oconexion = new Conexion().ObtenerConexion())
+                {
                     string query = "SELECT IdUsuario, Documento, NombreCompleto, Correo, Clave, Estado FROM usuario";
 
                     SqlCommand cmd = new SqlCommand(query, oconexion);
@@ -30,12 +23,11 @@ namespace CapaDatos
 
                     oconexion.Open();
 
-                    using (SqlDataReader dr = cmd.ExecuteReader()){
-
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
                         while (dr.Read())
                         {
-
-                            lista.Add(new Usuario()
+                            Usuario usuario = new Usuario()
                             {
                                 IdUsuario = Convert.ToInt32(dr["IdUsuario"]),
                                 Documento = dr["Documento"].ToString(),
@@ -43,16 +35,20 @@ namespace CapaDatos
                                 Correo = dr["Correo"].ToString(),
                                 Clave = dr["Clave"].ToString(),
                                 Estado = Convert.ToBoolean(dr["Estado"])
+                            };
 
-                            });
+                            lista.Add(usuario);
+                            Console.WriteLine($"Usuario encontrado: {usuario.Documento} - {usuario.NombreCompleto}");
                         }
                     }
                 }
-                catch(Exception ex)
-                {
-                    lista = new List<Usuario>();
-                }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error en Listar(): {ex.Message}");
+                lista = new List<Usuario>();
+            }
+
             return lista;
         }
     }
