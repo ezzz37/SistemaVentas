@@ -38,9 +38,12 @@
             menuReportes = new FontAwesome.Sharp.IconMenuItem();
             menuAcercaDe = new FontAwesome.Sharp.IconMenuItem();
             menuTitulo = new MenuStrip();
+            lblusuario = new ToolStripMenuItem();
+            usuarioToolStripMenuItem = new ToolStripMenuItem();
             label1 = new Label();
             contenedor = new Panel();
             menuStrip1.SuspendLayout();
+            menuTitulo.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -64,6 +67,7 @@
             menuUsuario.Size = new Size(80, 69);
             menuUsuario.Text = "Usuarios";
             menuUsuario.TextImageRelation = TextImageRelation.ImageAboveText;
+            menuUsuario.Click += menuUsuario_Click;
             // 
             // menuMantenedor
             // 
@@ -160,6 +164,7 @@
             // 
             menuTitulo.AutoSize = false;
             menuTitulo.BackColor = Color.DarkGray;
+            menuTitulo.Items.AddRange(new ToolStripItem[] { lblusuario, usuarioToolStripMenuItem });
             menuTitulo.Location = new Point(0, 0);
             menuTitulo.Name = "menuTitulo";
             menuTitulo.RightToLeft = RightToLeft.Yes;
@@ -167,6 +172,22 @@
             menuTitulo.TabIndex = 1;
             menuTitulo.Text = "menuStrip2";
             menuTitulo.ItemClicked += menuStrip2_ItemClicked;
+            // 
+            // lblusuario
+            // 
+            lblusuario.ForeColor = Color.White;
+            lblusuario.Name = "lblusuario";
+            lblusuario.Size = new Size(71, 74);
+            lblusuario.Text = "lblusuario";
+            lblusuario.Click += toolStripMenuItem1_Click;
+            // 
+            // usuarioToolStripMenuItem
+            // 
+            usuarioToolStripMenuItem.ForeColor = Color.White;
+            usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
+            usuarioToolStripMenuItem.Size = new Size(62, 74);
+            usuarioToolStripMenuItem.Text = ":Usuario";
+            usuarioToolStripMenuItem.Click += usuarioToolStripMenuItem_Click;
             // 
             // label1
             // 
@@ -203,8 +224,11 @@
             Name = "Inicio";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inicio";
+            Load += Inicio_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            menuTitulo.ResumeLayout(false);
+            menuTitulo.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -223,5 +247,7 @@
         private FontAwesome.Sharp.IconMenuItem menuClientes;
         private FontAwesome.Sharp.IconMenuItem menuAcercaDe;
         private Panel contenedor;
+        private ToolStripMenuItem usuarioToolStripMenuItem;
+        private ToolStripMenuItem lblusuario;
     }
 }
