@@ -24,7 +24,6 @@ namespace CapaPresentacion
         private static Form FormularioActivo = null;
         public Inicio(Usuario objusuario)
         {
-
             usuarioActual = objusuario;
 
             InitializeComponent();
