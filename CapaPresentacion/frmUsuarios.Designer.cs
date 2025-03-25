@@ -46,7 +46,7 @@
             cborol = new ComboBox();
             cboestado = new ComboBox();
             btnguardar = new FontAwesome.Sharp.IconButton();
-            btneditar = new FontAwesome.Sharp.IconButton();
+            btnlimpiar = new FontAwesome.Sharp.IconButton();
             btneliminar = new FontAwesome.Sharp.IconButton();
             label9 = new Label();
             dgvdata = new DataGridView();
@@ -65,7 +65,7 @@
             txtbuscarpor = new Label();
             cbobusqueda = new ComboBox();
             txtbusqueda = new TextBox();
-            btnlimpiar = new FontAwesome.Sharp.IconButton();
+            btnlimpiarbuscador = new FontAwesome.Sharp.IconButton();
             btnbuscar = new FontAwesome.Sharp.IconButton();
             txtindice = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvdata).BeginInit();
@@ -234,24 +234,24 @@
             btnguardar.UseVisualStyleBackColor = false;
             btnguardar.Click += btnguardar_Click;
             // 
-            // btneditar
+            // btnlimpiar
             // 
-            btneditar.BackColor = Color.MediumBlue;
-            btneditar.Cursor = Cursors.Hand;
-            btneditar.FlatAppearance.BorderColor = Color.Black;
-            btneditar.FlatStyle = FlatStyle.Flat;
-            btneditar.ForeColor = Color.White;
-            btneditar.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            btneditar.IconColor = Color.White;
-            btneditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btneditar.IconSize = 18;
-            btneditar.ImageAlign = ContentAlignment.MiddleLeft;
-            btneditar.Location = new Point(12, 445);
-            btneditar.Name = "btneditar";
-            btneditar.Size = new Size(194, 23);
-            btneditar.TabIndex = 16;
-            btneditar.Text = "Editar";
-            btneditar.UseVisualStyleBackColor = false;
+            btnlimpiar.BackColor = Color.MediumBlue;
+            btnlimpiar.Cursor = Cursors.Hand;
+            btnlimpiar.FlatAppearance.BorderColor = Color.Black;
+            btnlimpiar.FlatStyle = FlatStyle.Flat;
+            btnlimpiar.ForeColor = Color.White;
+            btnlimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            btnlimpiar.IconColor = Color.White;
+            btnlimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnlimpiar.IconSize = 18;
+            btnlimpiar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnlimpiar.Location = new Point(12, 445);
+            btnlimpiar.Name = "btnlimpiar";
+            btnlimpiar.Size = new Size(194, 23);
+            btnlimpiar.TabIndex = 16;
+            btnlimpiar.Text = "Limpiar";
+            btnlimpiar.UseVisualStyleBackColor = false;
             // 
             // btneliminar
             // 
@@ -423,23 +423,23 @@
             txtbusqueda.Size = new Size(135, 23);
             txtbusqueda.TabIndex = 24;
             // 
-            // btnlimpiar
+            // btnlimpiarbuscador
             // 
-            btnlimpiar.BackColor = Color.White;
-            btnlimpiar.Cursor = Cursors.Hand;
-            btnlimpiar.FlatAppearance.BorderColor = Color.Black;
-            btnlimpiar.FlatStyle = FlatStyle.Flat;
-            btnlimpiar.ForeColor = Color.Transparent;
-            btnlimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            btnlimpiar.IconColor = Color.Black;
-            btnlimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnlimpiar.IconSize = 18;
-            btnlimpiar.Location = new Point(1000, 39);
-            btnlimpiar.Name = "btnlimpiar";
-            btnlimpiar.Size = new Size(43, 23);
-            btnlimpiar.TabIndex = 26;
-            btnlimpiar.TextAlign = ContentAlignment.MiddleRight;
-            btnlimpiar.UseVisualStyleBackColor = false;
+            btnlimpiarbuscador.BackColor = Color.White;
+            btnlimpiarbuscador.Cursor = Cursors.Hand;
+            btnlimpiarbuscador.FlatAppearance.BorderColor = Color.Black;
+            btnlimpiarbuscador.FlatStyle = FlatStyle.Flat;
+            btnlimpiarbuscador.ForeColor = Color.Transparent;
+            btnlimpiarbuscador.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            btnlimpiarbuscador.IconColor = Color.Black;
+            btnlimpiarbuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnlimpiarbuscador.IconSize = 18;
+            btnlimpiarbuscador.Location = new Point(1000, 39);
+            btnlimpiarbuscador.Name = "btnlimpiarbuscador";
+            btnlimpiarbuscador.Size = new Size(43, 23);
+            btnlimpiarbuscador.TabIndex = 26;
+            btnlimpiarbuscador.TextAlign = ContentAlignment.MiddleRight;
+            btnlimpiarbuscador.UseVisualStyleBackColor = false;
             // 
             // btnbuscar
             // 
@@ -473,7 +473,7 @@
             BackColor = Color.Black;
             ClientSize = new Size(1196, 611);
             Controls.Add(txtindice);
-            Controls.Add(btnlimpiar);
+            Controls.Add(btnlimpiarbuscador);
             Controls.Add(btnbuscar);
             Controls.Add(txtbusqueda);
             Controls.Add(cbobusqueda);
@@ -483,7 +483,7 @@
             Controls.Add(dgvdata);
             Controls.Add(label9);
             Controls.Add(btneliminar);
-            Controls.Add(btneditar);
+            Controls.Add(btnlimpiar);
             Controls.Add(btnguardar);
             Controls.Add(cboestado);
             Controls.Add(cborol);
@@ -527,7 +527,7 @@
         private ComboBox cborol;
         private ComboBox cboestado;
         private FontAwesome.Sharp.IconButton btnguardar;
-        private FontAwesome.Sharp.IconButton btneditar;
+        private FontAwesome.Sharp.IconButton btnlimpiar;
         private FontAwesome.Sharp.IconButton btneliminar;
         private Label label9;
         private DataGridView dgvdata;
@@ -546,7 +546,7 @@
         private Label txtbuscarpor;
         private ComboBox cbobusqueda;
         private TextBox txtbusqueda;
-        private FontAwesome.Sharp.IconButton btnlimpiar;
+        private FontAwesome.Sharp.IconButton btnlimpiarbuscador;
         private FontAwesome.Sharp.IconButton btnbuscar;
         private TextBox txtindice;
     }
