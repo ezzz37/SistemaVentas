@@ -22,46 +22,6 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtdocumento_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
             cboestado.Items.Add(new OpcionCombo() { valor = 1, text = "Activo" });
@@ -123,13 +83,20 @@ namespace CapaPresentacion
             }
         }
 
-        private void txtclave_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnguardar_Click(object sender, EventArgs e)
         {
+            Usuario objusuario = new Usuario()
+            {
+                IdUsuario = txtid.Text == "" ? 0 : Convert.ToInt32(txtid.Text),
+                Documento = txtdocumento.Text,
+                NombreCompleto = txtnombrecompleto.Text,
+                Correo = txtcorreo.Text,
+                Clave = txtclave.Text,
+                oRol = new Rol() { idRol = Convert.ToInt32((cborol.SelectedItem as OpcionCombo).valor) },
+                Estado = Convert.ToInt32((cboestado.SelectedItem as OpcionCombo).valor) == 1 ? true : false
+            };
+
+            /*
             if (cborol.SelectedItem is OpcionCombo rolSeleccionado && cboestado.SelectedItem is OpcionCombo estadoSeleccionado)
             {
                 dgvdata.Rows.Add(new object[] {
@@ -149,11 +116,17 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Por favor, seleccione un rol y un estado válidos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            Limpiar();
+
+
+
+            Limpiar(); 
+            */
+
         }
 
         private void Limpiar()
         {
+            txtindice.Text = "-1";
             txtid.Text = "";
             txtdocumento.Text = "";
             txtnombrecompleto.Text = "";
@@ -164,20 +137,47 @@ namespace CapaPresentacion
             cboestado.SelectedIndex = 0;
         }
 
-        private void label10_Click(object sender, EventArgs e)
+        private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0 && dgvdata.Columns[e.ColumnIndex].Name == "btnseleccionar")
+            {
+                txtindice.Text = e.RowIndex.ToString();
+                txtid.Text = dgvdata.Rows[e.RowIndex].Cells["IdUsuario"].Value?.ToString();
+                txtdocumento.Text = dgvdata.Rows[e.RowIndex].Cells["Documento"].Value?.ToString();
+                txtnombrecompleto.Text = dgvdata.Rows[e.RowIndex].Cells["NombreCompleto"].Value?.ToString();
+                txtcorreo.Text = dgvdata.Rows[e.RowIndex].Cells["Correo"].Value?.ToString();
+                txtclave.Text = dgvdata.Rows[e.RowIndex].Cells["Clave"].Value?.ToString();
+                txtconfirmarclave.Text = dgvdata.Rows[e.RowIndex].Cells["Clave"].Value?.ToString();
 
+                var idRol = dgvdata.Rows[e.RowIndex].Cells["idRol"].Value;
+                if (idRol != null)
+                {
+                    foreach (OpcionCombo oc in cborol.Items)
+                    {
+                        if (Convert.ToInt32(oc.valor) == Convert.ToInt32(idRol))
+                        {
+                            cborol.SelectedItem = oc;
+                            break;
+                        }
+                    }
+                }
+
+                var estadoValor = dgvdata.Rows[e.RowIndex].Cells["EstadoValor"].Value;
+                if (estadoValor != null)
+                {
+                    foreach (OpcionCombo oc in cboestado.Items)
+                    {
+                        if (Convert.ToInt32(oc.valor) == Convert.ToInt32(estadoValor))
+                        {
+                            cboestado.SelectedItem = oc;
+                            break;
+                        }
+                    }
+                }
+
+            }
         }
 
-        private void btnbuscar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnlimpiar_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
@@ -190,7 +190,7 @@ namespace CapaPresentacion
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
-                string imagePath = @"C:\Users\Ezequ\Desktop\SistemaDeVentas\CapaPresentacion\imagenes\pin.png";
+                string imagePath = @"C:\Users\Ezequ\Desktop\SistemaDeVentas\CapaPresentacion\imagenes\visto20.png";
 
                 if (File.Exists(imagePath))
                 {
