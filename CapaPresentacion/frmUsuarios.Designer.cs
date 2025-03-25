@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -67,6 +67,7 @@
             txtbusqueda = new TextBox();
             btnlimpiar = new FontAwesome.Sharp.IconButton();
             btnbuscar = new FontAwesome.Sharp.IconButton();
+            txtindice = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvdata).BeginInit();
             SuspendLayout();
             // 
@@ -79,7 +80,6 @@
             label1.Name = "label1";
             label1.Size = new Size(221, 611);
             label1.TabIndex = 0;
-            label1.Click += label1_Click_1;
             // 
             // label2
             // 
@@ -92,7 +92,6 @@
             label2.Size = new Size(111, 19);
             label2.TabIndex = 1;
             label2.Text = "Nro Documento:";
-            label2.Click += label2_Click;
             // 
             // label3
             // 
@@ -104,7 +103,6 @@
             label3.Size = new Size(126, 19);
             label3.TabIndex = 2;
             label3.Text = "Nombre Completo:";
-            label3.Click += label3_Click;
             // 
             // label4
             // 
@@ -123,7 +121,6 @@
             txtdocumento.Name = "txtdocumento";
             txtdocumento.Size = new Size(194, 23);
             txtdocumento.TabIndex = 4;
-            txtdocumento.TextChanged += txtdocumento_TextChanged;
             // 
             // txtnombrecompleto
             // 
@@ -149,7 +146,6 @@
             label5.Size = new Size(82, 19);
             label5.TabIndex = 7;
             label5.Text = "Contraseña:";
-            label5.Click += label5_Click;
             // 
             // txtclave
             // 
@@ -158,7 +154,6 @@
             txtclave.PasswordChar = '*';
             txtclave.Size = new Size(194, 23);
             txtclave.TabIndex = 8;
-            txtclave.TextChanged += txtclave_TextChanged;
             // 
             // label6
             // 
@@ -170,7 +165,6 @@
             label6.Size = new Size(147, 19);
             label6.TabIndex = 9;
             label6.Text = "Confirmar Contraseña:";
-            label6.Click += label6_Click;
             // 
             // txtconfirmarclave
             // 
@@ -190,7 +184,6 @@
             label7.Size = new Size(31, 19);
             label7.TabIndex = 11;
             label7.Text = "Rol:";
-            label7.Click += label7_Click;
             // 
             // label8
             // 
@@ -293,24 +286,24 @@
             // dgvdata
             // 
             dgvdata.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.Padding = new Padding(2);
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvdata.Columns.AddRange(new DataGridViewColumn[] { btnseleccionar, IdUsuario, Documento, NombreCompleto, Correo, Clave, IdRol, Rol, EstadoValor, Estado });
             dgvdata.Location = new Point(244, 79);
             dgvdata.MultiSelect = false;
             dgvdata.Name = "dgvdata";
             dgvdata.ReadOnly = true;
-            dataGridViewCellStyle2.SelectionBackColor = Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
-            dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.SelectionBackColor = Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
+            dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dgvdata.RowTemplate.Height = 28;
             dgvdata.Size = new Size(821, 427);
             dgvdata.TabIndex = 19;
@@ -395,7 +388,6 @@
             label10.TabIndex = 20;
             label10.Text = "Lista de Usuarios:";
             label10.TextAlign = ContentAlignment.MiddleLeft;
-            label10.Click += label10_Click;
             // 
             // txtid
             // 
@@ -448,7 +440,6 @@
             btnlimpiar.TabIndex = 26;
             btnlimpiar.TextAlign = ContentAlignment.MiddleRight;
             btnlimpiar.UseVisualStyleBackColor = false;
-            btnlimpiar.Click += btnlimpiar_Click;
             // 
             // btnbuscar
             // 
@@ -466,7 +457,14 @@
             btnbuscar.Size = new Size(45, 23);
             btnbuscar.TabIndex = 25;
             btnbuscar.UseVisualStyleBackColor = false;
-            btnbuscar.Click += btnbuscar_Click;
+            // 
+            // txtindice
+            // 
+            txtindice.Location = new Point(154, 53);
+            txtindice.Name = "txtindice";
+            txtindice.Size = new Size(23, 23);
+            txtindice.TabIndex = 27;
+            txtindice.Text = "0";
             // 
             // frmUsuarios
             // 
@@ -474,6 +472,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1196, 611);
+            Controls.Add(txtindice);
             Controls.Add(btnlimpiar);
             Controls.Add(btnbuscar);
             Controls.Add(txtbusqueda);
@@ -549,5 +548,6 @@
         private TextBox txtbusqueda;
         private FontAwesome.Sharp.IconButton btnlimpiar;
         private FontAwesome.Sharp.IconButton btnbuscar;
+        private TextBox txtindice;
     }
 }
