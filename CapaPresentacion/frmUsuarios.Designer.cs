@@ -314,8 +314,6 @@
             dgvdata.RowTemplate.Height = 28;
             dgvdata.Size = new Size(821, 427);
             dgvdata.TabIndex = 19;
-            dgvdata.CellContentClick += dgvdata_CellContentClick;
-            dgvdata.CellPainting += dgvdata_CellPainting;
             // 
             // btnseleccionar
             // 

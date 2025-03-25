@@ -102,7 +102,7 @@ namespace CapaPresentacion
 
             foreach (Usuario item in ListaUsuario)
             {
-                dgvdata.Rows.Add(new object[] {
+                    dgvdata.Rows.Add(new object[] {
                         "",
                         item.IdUsuario,
                         item.Documento,
@@ -177,44 +177,6 @@ namespace CapaPresentacion
         private void btnlimpiar_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-            if (e.RowIndex < 0 || e.ColumnIndex != 0)
-            {
-                return;
-            }
-
-            if (e.ColumnIndex == 0)
-            {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-
-                string imagePath = @"C:\Users\Ezequ\Desktop\SistemaDeVentas\CapaPresentacion\imagenes\pin.png";
-
-                if (File.Exists(imagePath))
-                {
-                    using (Image img = Image.FromFile(imagePath))
-                    {
-                        var w = img.Width;
-                        var h = img.Height;
-                        var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
-                        var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
-
-                        e.Graphics.DrawImage(img, new Rectangle(x, y, w, h));
-                        e.Handled = true;
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("La imagen no existe en la ruta especificada.");
-                }
-            }
         }
     }
 }
