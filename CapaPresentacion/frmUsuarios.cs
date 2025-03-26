@@ -85,6 +85,7 @@ namespace CapaPresentacion
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
+            string mensaje = string.Empty;
             Usuario objusuario = new Usuario()
             {
                 IdUsuario = txtid.Text == "" ? 0 : Convert.ToInt32(txtid.Text),
@@ -96,12 +97,15 @@ namespace CapaPresentacion
                 Estado = Convert.ToInt32((cboestado.SelectedItem as OpcionCombo).valor) == 1 ? true : false
             };
 
-            /*
-            if (cborol.SelectedItem is OpcionCombo rolSeleccionado && cboestado.SelectedItem is OpcionCombo estadoSeleccionado)
+            int idusuariogenerado = new CN_Usuario().Registrar(objusuario, out mensaje);
+
+            if (idusuariogenerado != 0)
             {
-                dgvdata.Rows.Add(new object[] {
+                if (cborol.SelectedItem is OpcionCombo rolSeleccionado && cboestado.SelectedItem is OpcionCombo estadoSeleccionado)
+                {
+                    dgvdata.Rows.Add(new object[] {
                         "",
-                        txtid.Text,
+                        idusuariogenerado,
                         txtdocumento.Text,
                         txtnombrecompleto.Text,
                         txtcorreo.Text,
@@ -110,18 +114,17 @@ namespace CapaPresentacion
                         rolSeleccionado.text.ToString(),
                         estadoSeleccionado.valor.ToString(),
                         estadoSeleccionado.text.ToString()
+
                     });
+
+                    Limpiar();
+
+                }
             }
             else
             {
-                MessageBox.Show("Por favor, seleccione un rol y un estado válidos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(mensaje);
             }
-
-
-
-            Limpiar(); 
-            */
-
         }
 
         private void Limpiar()
