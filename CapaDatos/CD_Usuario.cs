@@ -124,7 +124,7 @@ namespace CapaDatos
 
                     //salida
                     respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
-                    Mensaje = cmd.Parameters["@Mensaje"].Value?.ToString() ?? string.Empty;
+                    Mensaje = cmd.Parameters["Mensaje"].Value?.ToString() ?? string.Empty;
 
                 }
             }
