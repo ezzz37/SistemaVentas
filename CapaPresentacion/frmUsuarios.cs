@@ -97,13 +97,15 @@ namespace CapaPresentacion
                 Estado = Convert.ToInt32((cboestado.SelectedItem as OpcionCombo).valor) == 1 ? true : false
             };
 
-            int idusuariogenerado = new CN_Usuario().Registrar(objusuario, out mensaje);
-
-            if (idusuariogenerado != 0)
+            if (objusuario.IdUsuario == 0)
             {
-                if (cborol.SelectedItem is OpcionCombo rolSeleccionado && cboestado.SelectedItem is OpcionCombo estadoSeleccionado)
+                int idusuariogenerado = new CN_Usuario().Registrar(objusuario, out mensaje);
+
+                if (idusuariogenerado != 0)
                 {
-                    dgvdata.Rows.Add(new object[] {
+                    if (cborol.SelectedItem is OpcionCombo rolSeleccionado && cboestado.SelectedItem is OpcionCombo estadoSeleccionado)
+                    {
+                        dgvdata.Rows.Add(new object[] {
                         "",
                         idusuariogenerado,
                         txtdocumento.Text,
@@ -117,13 +119,23 @@ namespace CapaPresentacion
 
                     });
 
-                    Limpiar();
+                        Limpiar();
 
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(mensaje);
                 }
             }
             else
             {
-                MessageBox.Show(mensaje);
+                bool resultado = new CN_Usuario().Editar(objusuario, out mensaje);
+
+                if (resultado)
+                {
+
+                }
             }
         }
 

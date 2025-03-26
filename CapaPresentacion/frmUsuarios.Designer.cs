@@ -78,7 +78,7 @@
             label1.Dock = DockStyle.Left;
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(221, 533);
+            label1.Size = new Size(221, 611);
             label1.TabIndex = 0;
             // 
             // label2
@@ -128,7 +128,6 @@
             txtnombrecompleto.Name = "txtnombrecompleto";
             txtnombrecompleto.Size = new Size(194, 23);
             txtnombrecompleto.TabIndex = 5;
-            txtnombrecompleto.TextChanged += txtnombrecompleto_TextChanged;
             // 
             // txtcorreo
             // 
@@ -253,7 +252,6 @@
             btnlimpiar.TabIndex = 16;
             btnlimpiar.Text = "Limpiar";
             btnlimpiar.UseVisualStyleBackColor = false;
-            btnlimpiar.Click += btnlimpiar_Click;
             // 
             // btneliminar
             // 
@@ -273,7 +271,6 @@
             btneliminar.TabIndex = 17;
             btneliminar.Text = "Eliminar";
             btneliminar.UseVisualStyleBackColor = false;
-            btneliminar.Click += btneliminar_Click;
             // 
             // label9
             // 
@@ -308,7 +305,7 @@
             dataGridViewCellStyle2.SelectionForeColor = Color.Black;
             dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvdata.RowTemplate.Height = 28;
-            dgvdata.Size = new Size(759, 427);
+            dgvdata.Size = new Size(821, 427);
             dgvdata.TabIndex = 19;
             dgvdata.CellContentClick += dgvdata_CellContentClick;
             dgvdata.CellPainting += dgvdata_CellPainting;
@@ -384,12 +381,10 @@
             // label10
             // 
             label10.BackColor = Color.White;
-            label10.BorderStyle = BorderStyle.FixedSingle;
             label10.Font = new Font("Segoe UI", 18F);
             label10.Location = new Point(244, 18);
             label10.Name = "label10";
-            label10.Padding = new Padding(2, 0, 0, 0);
-            label10.Size = new Size(759, 58);
+            label10.Size = new Size(821, 58);
             label10.TabIndex = 20;
             label10.Text = "Lista de Usuarios:";
             label10.TextAlign = ContentAlignment.MiddleLeft;
@@ -401,14 +396,13 @@
             txtid.Size = new Size(23, 23);
             txtid.TabIndex = 21;
             txtid.Text = "0";
-            txtid.Visible = false;
             // 
             // txtbuscarpor
             // 
             txtbuscarpor.AutoSize = true;
             txtbuscarpor.BackColor = Color.White;
             txtbuscarpor.Font = new Font("Segoe UI", 10F);
-            txtbuscarpor.Location = new Point(540, 43);
+            txtbuscarpor.Location = new Point(574, 41);
             txtbuscarpor.Name = "txtbuscarpor";
             txtbuscarpor.Size = new Size(76, 19);
             txtbuscarpor.TabIndex = 22;
@@ -417,14 +411,14 @@
             // cbobusqueda
             // 
             cbobusqueda.FormattingEnabled = true;
-            cbobusqueda.Location = new Point(622, 43);
+            cbobusqueda.Location = new Point(656, 41);
             cbobusqueda.Name = "cbobusqueda";
             cbobusqueda.Size = new Size(121, 23);
             cbobusqueda.TabIndex = 23;
             // 
             // txtbusqueda
             // 
-            txtbusqueda.Location = new Point(749, 42);
+            txtbusqueda.Location = new Point(783, 40);
             txtbusqueda.Name = "txtbusqueda";
             txtbusqueda.Size = new Size(135, 23);
             txtbusqueda.TabIndex = 24;
@@ -440,13 +434,12 @@
             btnlimpiarbuscador.IconColor = Color.Black;
             btnlimpiarbuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnlimpiarbuscador.IconSize = 18;
-            btnlimpiarbuscador.Location = new Point(950, 42);
+            btnlimpiarbuscador.Location = new Point(1000, 39);
             btnlimpiarbuscador.Name = "btnlimpiarbuscador";
             btnlimpiarbuscador.Size = new Size(43, 23);
             btnlimpiarbuscador.TabIndex = 26;
             btnlimpiarbuscador.TextAlign = ContentAlignment.MiddleRight;
             btnlimpiarbuscador.UseVisualStyleBackColor = false;
-            btnlimpiarbuscador.Click += btnlimpiarbuscador_Click;
             // 
             // btnbuscar
             // 
@@ -459,12 +452,11 @@
             btnbuscar.IconColor = Color.Black;
             btnbuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnbuscar.IconSize = 18;
-            btnbuscar.Location = new Point(899, 42);
+            btnbuscar.Location = new Point(949, 39);
             btnbuscar.Name = "btnbuscar";
             btnbuscar.Size = new Size(45, 23);
             btnbuscar.TabIndex = 25;
             btnbuscar.UseVisualStyleBackColor = false;
-            btnbuscar.Click += btnbuscar_Click;
             // 
             // txtindice
             // 
@@ -473,14 +465,13 @@
             txtindice.Size = new Size(23, 23);
             txtindice.TabIndex = 27;
             txtindice.Text = "-1";
-            txtindice.Visible = false;
             // 
             // frmUsuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(1013, 533);
+            ClientSize = new Size(1196, 611);
             Controls.Add(txtindice);
             Controls.Add(btnlimpiarbuscador);
             Controls.Add(btnbuscar);
