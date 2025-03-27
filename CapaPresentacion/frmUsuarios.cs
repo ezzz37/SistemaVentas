@@ -12,6 +12,8 @@ using CapaPresentacion.Utilidades;
 
 using CapaEntidad;
 using CapaNegocio;
+using System.Runtime.CompilerServices;
+using System.Diagnostics.Contracts;
 
 namespace CapaPresentacion
 {
@@ -134,7 +136,23 @@ namespace CapaPresentacion
 
                 if (resultado)
                 {
+                    DataGridViewRow row = dgvdata.Rows[Convert.ToInt32(txtindice.Text)];
+                    row.Cells["IdUsuario"].Value = txtid.Text;
+                    row.Cells["Documento"].Value = txtdocumento.Text;
+                    row.Cells["NombreCompleto"].Value = txtnombrecompleto.Text;
+                    row.Cells["Correo"].Value = txtcorreo.Text;
+                    row.Cells["Clave"].Value = txtdocumento.Text;
+                    row.Cells["IdRol"].Value = ((OpcionCombo)cborol.SelectedItem).valor.ToString();
+                    row.Cells["Rol"].Value = ((OpcionCombo)cborol.SelectedItem).text.ToString();
+                    row.Cells["EstadoValor"].Value = ((OpcionCombo)cboestado.SelectedItem).text.ToString();
+                    row.Cells["Estado"].Value = ((OpcionCombo)cboestado.SelectedItem).text.ToString();
 
+                    Limpiar();
+
+                }
+                else
+                {
+                    MessageBox.Show(mensaje);
                 }
             }
         }
@@ -150,6 +168,8 @@ namespace CapaPresentacion
             txtconfirmarclave.Text = "";
             cborol.SelectedIndex = 0;
             cboestado.SelectedIndex = 0;
+
+            txtdocumento.Select();
         }
 
         private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -180,12 +200,16 @@ namespace CapaPresentacion
                 var estadoValor = dgvdata.Rows[e.RowIndex].Cells["EstadoValor"].Value;
                 if (estadoValor != null)
                 {
-                    foreach (OpcionCombo oc in cboestado.Items)
+                    int valor;
+                    if (int.TryParse(estadoValor.ToString(), out valor))
                     {
-                        if (Convert.ToInt32(oc.valor) == Convert.ToInt32(estadoValor))
+                        foreach (OpcionCombo oc in cboestado.Items)
                         {
-                            cboestado.SelectedItem = oc;
-                            break;
+                            if (Convert.ToInt32(oc.valor) == valor)
+                            {
+                                cboestado.SelectedItem = oc;
+                                break;
+                            }
                         }
                     }
                 }
@@ -227,5 +251,88 @@ namespace CapaPresentacion
             }
         }
 
+        private void btneliminar_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(txtid.Text) != 0)
+            {
+                if (MessageBox.Show("Desea eliminar el usuario?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    string mensaje = string.Empty;
+
+                    Usuario objusuario = new Usuario()
+                    {
+                        IdUsuario = txtid.Text == "" ? 0 : Convert.ToInt32(txtid.Text)
+                    };
+
+                    bool respuesta = new CN_Usuario().Eliminar(objusuario, out mensaje);
+
+                    if (respuesta)
+                    {
+                        dgvdata.Rows.RemoveAt(Convert.ToInt32(txtindice.Text));
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+            }
+        }
+
+        private void btnbuscar_Click(object sender, EventArgs e)
+        {
+            if (cbobusqueda.SelectedItem == null || !(cbobusqueda.SelectedItem is OpcionCombo))
+            {
+                MessageBox.Show("Por favor seleccione un criterio de búsqueda válido");
+                return;
+            }
+            string columnaFiltro = (cbobusqueda.SelectedItem as OpcionCombo).valor.ToString();
+
+            if (!dgvdata.Columns.Contains(columnaFiltro))
+            {
+                MessageBox.Show($"La columna '{columnaFiltro}' no existe en la tabla");
+                return;
+            }
+            string textoBusqueda = txtbusqueda.Text.Trim().ToUpper();
+            if (string.IsNullOrEmpty(textoBusqueda))
+            {
+                MessageBox.Show("Por favor ingrese un texto para buscar");
+                MostrarTodasLasFilas();
+                return;
+            }
+            try
+            {
+                foreach (DataGridViewRow row in dgvdata.Rows)
+                {
+                    if (!row.IsNewRow) // Ignorar fila nueva si esta en modo edición
+                    {
+                        var cellValue = row.Cells[columnaFiltro].Value;
+                        string valorCelda = cellValue?.ToString()?.Trim()?.ToUpper() ?? string.Empty;
+
+                        row.Visible = valorCelda.Contains(textoBusqueda);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al realizar la búsqueda: {ex.Message}");
+            }
+        }
+        private void MostrarTodasLasFilas()
+        {
+            foreach (DataGridViewRow row in dgvdata.Rows)
+            {
+                row.Visible = true;
+            }
+        }
+
+        private void btnlimpiarbuscador_Click(object sender, EventArgs e)
+        {
+            txtbusqueda.Text = "";
+
+            foreach (DataGridViewRow row in dgvdata.Rows)
+            {
+                row.Visible = true;
+            }
+        }
     }
 }
