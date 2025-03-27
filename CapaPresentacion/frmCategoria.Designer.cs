@@ -48,7 +48,7 @@
             btneliminar = new FontAwesome.Sharp.IconButton();
             btnlimpiar = new FontAwesome.Sharp.IconButton();
             btnguardar = new FontAwesome.Sharp.IconButton();
-            txtdescripcion = new TextBox();
+            txtdocumento = new TextBox();
             label2 = new Label();
             label1 = new Label();
             label8 = new Label();
@@ -72,7 +72,6 @@
             btnbuscar.Size = new Size(45, 23);
             btnbuscar.TabIndex = 53;
             btnbuscar.UseVisualStyleBackColor = false;
-            btnbuscar.Click += btnbuscar_Click;
             // 
             // dgvdata
             // 
@@ -96,10 +95,8 @@
             dataGridViewCellStyle2.SelectionForeColor = Color.Black;
             dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvdata.RowTemplate.Height = 28;
-            dgvdata.Size = new Size(821, 410);
+            dgvdata.Size = new Size(821, 181);
             dgvdata.TabIndex = 47;
-            dgvdata.CellContentClick += dgvdata_CellContentClick;
-            dgvdata.CellPainting += dgvdata_CellPainting;
             // 
             // btnseleccionar
             // 
@@ -152,7 +149,6 @@
             btnlimpiarbuscador.TabIndex = 54;
             btnlimpiarbuscador.TextAlign = ContentAlignment.MiddleRight;
             btnlimpiarbuscador.UseVisualStyleBackColor = false;
-            btnlimpiarbuscador.Click += btnlimpiarbuscador_Click;
             // 
             // txtbusqueda
             // 
@@ -240,7 +236,6 @@
             btneliminar.TabIndex = 45;
             btneliminar.Text = "Eliminar";
             btneliminar.UseVisualStyleBackColor = false;
-            btneliminar.Click += btneliminar_Click;
             // 
             // btnlimpiar
             // 
@@ -260,7 +255,6 @@
             btnlimpiar.TabIndex = 44;
             btnlimpiar.Text = "Limpiar";
             btnlimpiar.UseVisualStyleBackColor = false;
-            btnlimpiar.Click += btnlimpiar_Click;
             // 
             // btnguardar
             // 
@@ -280,14 +274,13 @@
             btnguardar.TabIndex = 43;
             btnguardar.Text = "Guardar";
             btnguardar.UseVisualStyleBackColor = false;
-            btnguardar.Click += btnguardar_Click;
             // 
-            // txtdescripcion
+            // txtdocumento
             // 
-            txtdescripcion.Location = new Point(13, 88);
-            txtdescripcion.Name = "txtdescripcion";
-            txtdescripcion.Size = new Size(194, 23);
-            txtdescripcion.TabIndex = 32;
+            txtdocumento.Location = new Point(13, 88);
+            txtdocumento.Name = "txtdocumento";
+            txtdocumento.Size = new Size(194, 23);
+            txtdocumento.TabIndex = 32;
             // 
             // label2
             // 
@@ -308,7 +301,7 @@
             label1.Dock = DockStyle.Left;
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(221, 539);
+            label1.Size = new Size(221, 318);
             label1.TabIndex = 28;
             // 
             // label8
@@ -335,7 +328,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1094, 539);
+            ClientSize = new Size(1094, 318);
             Controls.Add(btnbuscar);
             Controls.Add(dgvdata);
             Controls.Add(btnlimpiarbuscador);
@@ -351,7 +344,7 @@
             Controls.Add(btnguardar);
             Controls.Add(cboestado);
             Controls.Add(label8);
-            Controls.Add(txtdescripcion);
+            Controls.Add(txtdocumento);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "frmCategoria";
@@ -377,7 +370,7 @@
         private FontAwesome.Sharp.IconButton btneliminar;
         private FontAwesome.Sharp.IconButton btnlimpiar;
         private FontAwesome.Sharp.IconButton btnguardar;
-        private TextBox txtdescripcion;
+        private TextBox txtdocumento;
         private Label label2;
         private Label label1;
         private DataGridViewButtonColumn btnseleccionar;
