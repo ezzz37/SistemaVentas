@@ -44,8 +44,7 @@ namespace CapaPresentacion
 
             foreach (Categoria item in Lista)
             {
-                dgvdata.Rows.Add(new object[] {
-                        item.IdCategoria,
+                dgvdata.Rows.Add(new object[] {"",item.IdCategoria,
                         item.Descripcion,
                         item.Estado == true ? 1 : 0,
                         item.Estado == true ? "Activo" : "No activo",

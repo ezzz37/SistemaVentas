@@ -75,7 +75,7 @@ namespace CapaPresentacion
                         item.oRol.Descripcion,
                         item.Estado == true ? 1 : 0,
                         item.Estado == true ? "Activo" : "No activo",
-                    });
+                });
             }
 
             // Verificar si hay elementos antes de establecer el SelectedIndex
