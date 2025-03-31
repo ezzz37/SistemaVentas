@@ -282,7 +282,7 @@ namespace CapaPresentacion
         {
             if (cbobusqueda.SelectedItem == null || !(cbobusqueda.SelectedItem is OpcionCombo))
             {
-                MessageBox.Show("Por favor seleccione un criterio de búsqueda válido");
+                MessageBox.Show("Por favor seleccione un criterio de busqueda valido");
                 return;
             }
             string columnaFiltro = (cbobusqueda.SelectedItem as OpcionCombo).valor.ToString();
@@ -314,7 +314,7 @@ namespace CapaPresentacion
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al realizar la búsqueda: {ex.Message}");
+                MessageBox.Show($"Error al realizar la busqueda: {ex.Message}");
             }
         }
         private void MostrarTodasLasFilas()
@@ -333,6 +333,11 @@ namespace CapaPresentacion
             {
                 row.Visible = true;
             }
+        }
+
+        private void btnlimpiar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
     }
 }

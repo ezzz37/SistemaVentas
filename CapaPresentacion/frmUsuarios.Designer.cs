@@ -252,6 +252,7 @@
             btnlimpiar.TabIndex = 16;
             btnlimpiar.Text = "Limpiar";
             btnlimpiar.UseVisualStyleBackColor = false;
+            btnlimpiar.Click += btnlimpiar_Click;
             // 
             // btneliminar
             // 
