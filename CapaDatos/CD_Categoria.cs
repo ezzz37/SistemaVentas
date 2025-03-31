@@ -30,12 +30,12 @@ namespace CapaDatos
                     {
                         while (dr.Read())
                         {
-                            Categoria Categoria = new Categoria()
+                            lista.Add(new Categoria()
                             {
                                 IdCategoria = Convert.ToInt32(dr["IdCategoria"]),
                                 Descripcion = dr["Descripcion"].ToString(),
                                 Estado = Convert.ToBoolean(dr["Estado"])
-                            };
+                            });
                         }
                     }
                 }
