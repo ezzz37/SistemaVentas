@@ -41,7 +41,6 @@ namespace CapaPresentacion
             cborol.DisplayMember = "text";
             cborol.ValueMember = "valor";
 
-            // Verificar si hay elementos antes de establecer el SelectedIndex
             if (cborol.Items.Count > 0)
             {
                 cborol.SelectedIndex = 0;
@@ -60,7 +59,7 @@ namespace CapaPresentacion
 
 
             //MOSTRAR TODOS LOS USUARIOS
-            List<Usuario> ListaUsuario = new CN_Usuario().Listar(); // obtiene la lista usuario
+            List<Usuario> ListaUsuario = new CN_Usuario().Listar(); 
 
             foreach (Usuario item in ListaUsuario)
             {
@@ -77,8 +76,6 @@ namespace CapaPresentacion
                         item.Estado == true ? "Activo" : "No activo",
                 });
             }
-
-            // Verificar si hay elementos antes de establecer el SelectedIndex
             if (cborol.Items.Count > 0)
             {
                 cborol.SelectedIndex = 0;
