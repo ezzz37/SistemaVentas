@@ -128,6 +128,7 @@
             txtnombrecompleto.Name = "txtnombrecompleto";
             txtnombrecompleto.Size = new Size(194, 23);
             txtnombrecompleto.TabIndex = 5;
+            txtnombrecompleto.TextChanged += txtnombrecompleto_TextChanged;
             // 
             // txtcorreo
             // 
