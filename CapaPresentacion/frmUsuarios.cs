@@ -339,5 +339,10 @@ namespace CapaPresentacion
         {
             Limpiar();
         }
+
+        private void txtnombrecompleto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
