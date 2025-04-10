@@ -76,10 +76,5 @@ namespace CapaNegocio
         {
             return objcd_usuario.Eliminar(obj, out Mensaje);
         }
-
-        /*public bool Eliminar(Producto obj, out string mensaje)
-        {
-            throw new NotImplementedException();
-        }*/
     }
 }
