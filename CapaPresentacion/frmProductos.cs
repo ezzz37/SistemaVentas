@@ -152,6 +152,93 @@ namespace CapaPresentacion
                     MessageBox.Show(mensaje);
                 }
             }
+
+        }
+        private void Limpiar()
+        {
+            txtindice.Text = "-1";
+            txtid.Text = "";
+            txtcodigo.Text = "";
+            txtnombre.Text = "";
+            txtdescripcion.Text = "";
+            cbocategoria.SelectedIndex = 0;
+            cboestado.SelectedIndex = 0;
+            cboestado.SelectedIndex = 0;
+
+            txtcodigo.Select();
+        }
+
+        private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex != 0)
+            {
+                return;
+            }
+
+            if (e.ColumnIndex == 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                string imagePath = @"C:\Users\Ezequ\Desktop\SistemaDeVentas\CapaPresentacion\imagenes\visto20.png";
+
+                if (File.Exists(imagePath))
+                {
+                    using (Image img = Image.FromFile(imagePath))
+                    {
+                        var w = img.Width;
+                        var h = img.Height;
+                        var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                        var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                        e.Graphics.DrawImage(img, new Rectangle(x, y, w, h));
+                        e.Handled = true;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("La imagen no existe en la ruta especificada.");
+                }
+            }
+        }
+
+        private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && dgvdata.Columns[e.ColumnIndex].Name == "btnseleccionar")
+            {
+                int index = e.RowIndex;
+
+                txtid.Text = dgvdata.Rows[index].Cells["Id"].Value?.ToString();
+                txtcodigo.Text = dgvdata.Rows[index].Cells["Codigo"].Value?.ToString();
+                txtnombre.Text = dgvdata.Rows[index].Cells["Nombre"].Value?.ToString();
+                txtdescripcion.Text = dgvdata.Rows[index].Cells["Descripcion"].Value?.ToString();
+
+                // Asignar cat
+                if (int.TryParse(dgvdata.Rows[index].Cells["IdCategoria"].Value?.ToString(), out int idCategoria))
+                {
+                    SeleccionarComboPorValor(cbocategoria, idCategoria);
+                }
+
+                // Asignar estado
+                if (int.TryParse(dgvdata.Rows[index].Cells["EstadoValor"].Value?.ToString(), out int estado))
+                {
+                    SeleccionarComboPorValor(cboestado, estado);
+                }
+
+                txtindice.Text = index.ToString();
+            }
+        }
+        private void SeleccionarComboPorValor(ComboBox combo, int valor)
+        {
+            foreach (OpcionCombo oc in combo.Items)
+            {
+                if (int.TryParse(oc.valor.ToString(), out int valorCombo) && valorCombo == valor)
+                {
+                    combo.SelectedItem = oc;
+                    break;
+                }
+            }
+        }
+
         }
         private void Limpiar()
         {
@@ -242,6 +329,7 @@ namespace CapaPresentacion
         private void btneliminar_Click(object sender, EventArgs e)
         {
             if (Convert.ToInt32(txtid.Text) != 0)
+            if (int.TryParse(txtid.Text, out int id) && id != 0)
             {
                 if (MessageBox.Show("¿Desea eliminar el Producto?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -249,7 +337,11 @@ namespace CapaPresentacion
 
                     Producto obj = new Producto()
                     {
+
                         IdProducto = txtid.Text == "" ? 0 : Convert.ToInt32(txtid.Text)
+
+                        IdProducto = id
+
                     };
 
                     bool respuesta = new CN_Producto().Eliminar(obj, out mensaje);
@@ -274,7 +366,18 @@ namespace CapaPresentacion
                     }
                 }
             }
+
         }
+
+
+
+            else
+            {
+                MessageBox.Show("Seleccione un producto valido antes de eliminar.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+
 
 
         private void btnbuscar_Click_1(object sender, EventArgs e)

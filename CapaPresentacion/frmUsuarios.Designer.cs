@@ -441,6 +441,7 @@
             btnlimpiarbuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnlimpiarbuscador.IconSize = 18;
             btnlimpiarbuscador.Location = new Point(950, 42);
+            btnlimpiarbuscador.Location = new Point(1000, 39);
             btnlimpiarbuscador.Name = "btnlimpiarbuscador";
             btnlimpiarbuscador.Size = new Size(43, 23);
             btnlimpiarbuscador.TabIndex = 26;
