@@ -250,7 +250,11 @@ namespace CapaPresentacion
 
         private void btneliminar_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             if (Convert.ToInt32(txtid.Text) != 0)
+=======
+            if (!string.IsNullOrWhiteSpace(txtid.Text) && int.TryParse(txtid.Text, out int id) && id != 0)
+>>>>>>> master
             {
                 if (MessageBox.Show("Desea eliminar el usuario?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
