@@ -86,6 +86,19 @@ namespace CapaPresentacion
         {
             string mensaje = string.Empty;
             Usuario objusuario = new Usuario()
+            Usuario objusuario = new Usuario()
+            {
+                IdUsuario = txtid.Text == "" ? 0 : Convert.ToInt32(txtid.Text),
+                Documento = txtdocumento.Text,
+                NombreCompleto = txtnombrecompleto.Text,
+                Correo = txtcorreo.Text,
+                Clave = txtclave.Text,
+                oRol = new Rol() { idRol = Convert.ToInt32((cborol.SelectedItem as OpcionCombo).valor) },
+                Estado = Convert.ToInt32((cboestado.SelectedItem as OpcionCombo).valor) == 1 ? true : false
+            };
+
+            /*
+            if (cborol.SelectedItem is OpcionCombo rolSeleccionado && cboestado.SelectedItem is OpcionCombo estadoSeleccionado)
             {
                 IdUsuario = txtid.Text == "" ? 0 : Convert.ToInt32(txtid.Text),
                 Documento = txtdocumento.Text,
@@ -250,7 +263,7 @@ namespace CapaPresentacion
 
         private void btneliminar_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtid.Text) && int.TryParse(txtid.Text, out int id) && id != 0)
+            if (Convert.ToInt32(txtid.Text) != 0)
             {
                 if (MessageBox.Show("Desea eliminar el usuario?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {

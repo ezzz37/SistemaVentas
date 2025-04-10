@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+
+            SuspendLayout();
+            // 
+
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             btnbuscar = new FontAwesome.Sharp.IconButton();
@@ -424,10 +428,12 @@
             txtrazonsocial.Size = new Size(194, 23);
             txtrazonsocial.TabIndex = 80;
             // 
+
             // frmProveedores
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(897, 461);
             ClientSize = new Size(1060, 557);
             Controls.Add(txtrazonsocial);
             Controls.Add(btnbuscar);
@@ -459,7 +465,6 @@
             Load += frmProveedores_Load;
             ((System.ComponentModel.ISupportInitialize)dgvdata).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
