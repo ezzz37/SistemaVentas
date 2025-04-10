@@ -88,7 +88,6 @@
             menuMantenedor.Size = new Size(80, 69);
             menuMantenedor.Text = "Mantenedor";
             menuMantenedor.TextImageRelation = TextImageRelation.ImageAboveText;
-            menuMantenedor.Click += menuMantenedor_Click;
             // 
             // submenuCategoria
             // 
@@ -96,7 +95,7 @@
             submenuCategoria.IconColor = Color.Black;
             submenuCategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
             submenuCategoria.Name = "submenuCategoria";
-            submenuCategoria.Size = new Size(180, 22);
+            submenuCategoria.Size = new Size(125, 22);
             submenuCategoria.Text = "Categoria";
             submenuCategoria.Click += iconMenuItem1_Click;
             // 
@@ -106,7 +105,7 @@
             submenuProducto.IconColor = Color.Black;
             submenuProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
             submenuProducto.Name = "submenuProducto";
-            submenuProducto.Size = new Size(180, 22);
+            submenuProducto.Size = new Size(125, 22);
             submenuProducto.Text = "Producto";
             submenuProducto.Click += submenuProducto_Click;
             // 
@@ -130,7 +129,7 @@
             submenuregistrarventa.IconColor = Color.Black;
             submenuregistrarventa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             submenuregistrarventa.Name = "submenuregistrarventa";
-            submenuregistrarventa.Size = new Size(180, 22);
+            submenuregistrarventa.Size = new Size(128, 22);
             submenuregistrarventa.Text = "Registrar";
             submenuregistrarventa.Click += submenuregistrarventa_Click;
             // 
@@ -140,7 +139,7 @@
             submenuverdetalleventa.IconColor = Color.Black;
             submenuverdetalleventa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             submenuverdetalleventa.Name = "submenuverdetalleventa";
-            submenuverdetalleventa.Size = new Size(180, 22);
+            submenuverdetalleventa.Size = new Size(128, 22);
             submenuverdetalleventa.Text = "Ver detalle";
             submenuverdetalleventa.Click += submenuverdetalleventa_Click;
             // 
@@ -164,7 +163,7 @@
             submenuregistrarcompra.IconColor = Color.Black;
             submenuregistrarcompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             submenuregistrarcompra.Name = "submenuregistrarcompra";
-            submenuregistrarcompra.Size = new Size(180, 22);
+            submenuregistrarcompra.Size = new Size(128, 22);
             submenuregistrarcompra.Text = "Registrar";
             submenuregistrarcompra.Click += submenuregistrarcompra_Click;
             // 
@@ -174,7 +173,7 @@
             submenuverdetallecompra.IconColor = Color.Black;
             submenuverdetallecompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             submenuverdetallecompra.Name = "submenuverdetallecompra";
-            submenuverdetallecompra.Size = new Size(180, 22);
+            submenuverdetallecompra.Size = new Size(128, 22);
             submenuverdetallecompra.Text = "Ver detalle";
             submenuverdetallecompra.Click += submenuverdetallecompra_Click;
             // 
@@ -244,7 +243,6 @@
             menuTitulo.Size = new Size(1162, 78);
             menuTitulo.TabIndex = 1;
             menuTitulo.Text = "menuStrip2";
-            menuTitulo.ItemClicked += menuStrip2_ItemClicked;
             // 
             // lblusuario
             // 
@@ -252,7 +250,6 @@
             lblusuario.Name = "lblusuario";
             lblusuario.Size = new Size(71, 74);
             lblusuario.Text = "lblusuario";
-            lblusuario.Click += toolStripMenuItem1_Click;
             // 
             // usuarioToolStripMenuItem
             // 
@@ -262,7 +259,6 @@
             usuarioToolStripMenuItem.Padding = new Padding(4, 0, 0, 0);
             usuarioToolStripMenuItem.Size = new Size(58, 74);
             usuarioToolStripMenuItem.Text = ":Usuario";
-            usuarioToolStripMenuItem.Click += usuarioToolStripMenuItem_Click;
             // 
             // label1
             // 
@@ -275,7 +271,6 @@
             label1.TabIndex = 2;
             label1.Text = "Sistema de Ventas";
             label1.TextAlign = ContentAlignment.BottomLeft;
-            label1.Click += label1_Click;
             // 
             // contenedor
             // 
