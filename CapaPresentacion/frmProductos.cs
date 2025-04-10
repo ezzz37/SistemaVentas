@@ -241,7 +241,7 @@ namespace CapaPresentacion
 
         private void btneliminar_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(txtid.Text) != 0)
+            if (int.TryParse(txtid.Text, out int id) && id != 0)
             {
                 if (MessageBox.Show("¿Desea eliminar el Producto?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -249,7 +249,7 @@ namespace CapaPresentacion
 
                     Producto obj = new Producto()
                     {
-                        IdProducto = txtid.Text == "" ? 0 : Convert.ToInt32(txtid.Text)
+                        IdProducto = id
                     };
 
                     bool respuesta = new CN_Producto().Eliminar(obj, out mensaje);
@@ -274,7 +274,12 @@ namespace CapaPresentacion
                     }
                 }
             }
+            else
+            {
+                MessageBox.Show("Seleccione un producto valido antes de eliminar.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
+
 
 
         private void btnbuscar_Click_1(object sender, EventArgs e)
