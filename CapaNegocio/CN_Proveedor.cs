@@ -73,7 +73,6 @@ namespace CapaNegocio
                 return objcd_Proveedor.Editar(obj, out Mensaje);
             }
         }
-
         public bool Eliminar(Proveedor obj, out string Mensaje)
         {
             return objcd_Proveedor.Eliminar(obj, out Mensaje);
