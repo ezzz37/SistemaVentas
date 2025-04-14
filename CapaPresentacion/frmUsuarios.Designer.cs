@@ -80,6 +80,7 @@
             label1.Name = "label1";
             label1.Size = new Size(221, 533);
             label1.TabIndex = 0;
+            label1.Text = "gg";
             // 
             // label2
             // 
@@ -282,9 +283,9 @@
             label9.Font = new Font("Segoe UI", 16F);
             label9.Location = new Point(12, 9);
             label9.Name = "label9";
-            label9.Size = new Size(195, 30);
+            label9.Size = new Size(39, 30);
             label9.TabIndex = 18;
-            label9.Text = "Detalle del Usuario";
+            label9.Text = "gg";
             // 
             // dgvdata
             // 

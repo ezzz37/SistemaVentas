@@ -12,9 +12,8 @@ namespace CapaDatos
 
         public Conexion()
         {
-            // Construcción de la configuracion para leer UserSecrets
             var configuration = new ConfigurationBuilder()
-                .AddUserSecrets<Conexion>()  // Carga la configuración desde UserSecrets
+                .AddUserSecrets<Conexion>()
                 .Build();
 
             _connectionString = configuration.GetConnectionString("DefaultConnection");

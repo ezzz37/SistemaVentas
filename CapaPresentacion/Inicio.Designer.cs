@@ -48,6 +48,7 @@
             usuarioToolStripMenuItem = new ToolStripMenuItem();
             label1 = new Label();
             contenedor = new Panel();
+            submenunegocio = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             menuTitulo.SuspendLayout();
             SuspendLayout();
@@ -78,7 +79,7 @@
             // menuMantenedor
             // 
             menuMantenedor.AutoSize = false;
-            menuMantenedor.DropDownItems.AddRange(new ToolStripItem[] { submenuCategoria, submenuProducto });
+            menuMantenedor.DropDownItems.AddRange(new ToolStripItem[] { submenuCategoria, submenuProducto, submenunegocio });
             menuMantenedor.IconChar = FontAwesome.Sharp.IconChar.Tools;
             menuMantenedor.IconColor = Color.Black;
             menuMantenedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -280,6 +281,13 @@
             contenedor.Size = new Size(1162, 567);
             contenedor.TabIndex = 3;
             // 
+            // submenunegocio
+            // 
+            submenunegocio.Name = "submenunegocio";
+            submenunegocio.Size = new Size(180, 22);
+            submenunegocio.Text = "Negocio";
+            submenunegocio.Click += submenunegocio_Click;
+            // 
             // Inicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -325,5 +333,6 @@
         private FontAwesome.Sharp.IconMenuItem submenuverdetalleventa;
         private FontAwesome.Sharp.IconMenuItem submenuregistrarcompra;
         private FontAwesome.Sharp.IconMenuItem submenuverdetallecompra;
+        private ToolStripMenuItem submenunegocio;
     }
 }
