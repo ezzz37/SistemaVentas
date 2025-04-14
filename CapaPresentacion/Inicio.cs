@@ -29,21 +29,6 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        private void menuStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconMenuItem8_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void AbrirFormulario(IconMenuItem menu, Form formulario)
         {
             if (MenuActivo != null)
@@ -72,21 +57,11 @@ namespace CapaPresentacion
             AbrirFormulario((IconMenuItem)sender, new frmUsuarios());
         }
 
-        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Inicio_Load(object sender, EventArgs e)
         {
             List<Permiso> ListaPermisos = new CN_PERMISO().Listar(usuarioActual.IdUsuario);
 
-            foreach(IconMenuItem iconMenu in menuStrip1.Items)
+            foreach (IconMenuItem iconMenu in menuStrip1.Items)
             {
                 bool encontrado = ListaPermisos.Any(m => m.NombreMenu == iconMenu.Name);
 
@@ -98,11 +73,6 @@ namespace CapaPresentacion
             }
 
             lblusuario.Text = usuarioActual.NombreCompleto;
-
-        }
-
-        private void menuMantenedor_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -151,5 +121,9 @@ namespace CapaPresentacion
             AbrirFormulario((IconMenuItem)sender, new frmReportes());
         }
 
+        private void submenunegocio_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menuMantenedor, new frmNegocio());
+        }
     }
 }

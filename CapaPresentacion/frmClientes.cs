@@ -202,6 +202,7 @@ namespace CapaPresentacion
 
         private void btneliminar_Click(object sender, EventArgs e)
         {
+            if (Convert.ToInt32(txtid.Text) != 0)
             if (int.TryParse(txtid.Text, out int id) && id != 0)
             {
                 if (MessageBox.Show("Desea eliminar Cliente?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
