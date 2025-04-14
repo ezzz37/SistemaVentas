@@ -48,6 +48,7 @@
             usuarioToolStripMenuItem = new ToolStripMenuItem();
             label1 = new Label();
             contenedor = new Panel();
+            submenunegocio = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             menuTitulo.SuspendLayout();
             SuspendLayout();
@@ -78,7 +79,7 @@
             // menuMantenedor
             // 
             menuMantenedor.AutoSize = false;
-            menuMantenedor.DropDownItems.AddRange(new ToolStripItem[] { submenuCategoria, submenuProducto });
+            menuMantenedor.DropDownItems.AddRange(new ToolStripItem[] { submenuCategoria, submenuProducto, submenunegocio });
             menuMantenedor.IconChar = FontAwesome.Sharp.IconChar.Tools;
             menuMantenedor.IconColor = Color.Black;
             menuMantenedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -130,7 +131,7 @@
             submenuregistrarventa.IconColor = Color.Black;
             submenuregistrarventa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             submenuregistrarventa.Name = "submenuregistrarventa";
-            submenuregistrarventa.Size = new Size(180, 22);
+            submenuregistrarventa.Size = new Size(128, 22);
             submenuregistrarventa.Text = "Registrar";
             submenuregistrarventa.Click += submenuregistrarventa_Click;
             // 
@@ -140,7 +141,7 @@
             submenuverdetalleventa.IconColor = Color.Black;
             submenuverdetalleventa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             submenuverdetalleventa.Name = "submenuverdetalleventa";
-            submenuverdetalleventa.Size = new Size(180, 22);
+            submenuverdetalleventa.Size = new Size(128, 22);
             submenuverdetalleventa.Text = "Ver detalle";
             submenuverdetalleventa.Click += submenuverdetalleventa_Click;
             // 
@@ -164,7 +165,7 @@
             submenuregistrarcompra.IconColor = Color.Black;
             submenuregistrarcompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             submenuregistrarcompra.Name = "submenuregistrarcompra";
-            submenuregistrarcompra.Size = new Size(180, 22);
+            submenuregistrarcompra.Size = new Size(128, 22);
             submenuregistrarcompra.Text = "Registrar";
             submenuregistrarcompra.Click += submenuregistrarcompra_Click;
             // 
@@ -174,7 +175,7 @@
             submenuverdetallecompra.IconColor = Color.Black;
             submenuverdetallecompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             submenuverdetallecompra.Name = "submenuverdetallecompra";
-            submenuverdetallecompra.Size = new Size(180, 22);
+            submenuverdetallecompra.Size = new Size(128, 22);
             submenuverdetallecompra.Text = "Ver detalle";
             submenuverdetallecompra.Click += submenuverdetallecompra_Click;
             // 
@@ -285,6 +286,13 @@
             contenedor.Size = new Size(1162, 567);
             contenedor.TabIndex = 3;
             // 
+            // submenunegocio
+            // 
+            submenunegocio.Name = "submenunegocio";
+            submenunegocio.Size = new Size(180, 22);
+            submenunegocio.Text = "Negocio";
+            submenunegocio.Click += submenunegocio_Click;
+            // 
             // Inicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -330,5 +338,6 @@
         private FontAwesome.Sharp.IconMenuItem submenuverdetalleventa;
         private FontAwesome.Sharp.IconMenuItem submenuregistrarcompra;
         private FontAwesome.Sharp.IconMenuItem submenuverdetallecompra;
+        private ToolStripMenuItem submenunegocio;
     }
 }

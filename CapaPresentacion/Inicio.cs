@@ -86,7 +86,7 @@ namespace CapaPresentacion
         {
             List<Permiso> ListaPermisos = new CN_PERMISO().Listar(usuarioActual.IdUsuario);
 
-            foreach(IconMenuItem iconMenu in menuStrip1.Items)
+            foreach (IconMenuItem iconMenu in menuStrip1.Items)
             {
                 bool encontrado = ListaPermisos.Any(m => m.NombreMenu == iconMenu.Name);
 
@@ -151,5 +151,9 @@ namespace CapaPresentacion
             AbrirFormulario((IconMenuItem)sender, new frmReportes());
         }
 
+        private void submenunegocio_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menuMantenedor, new frmNegocio());
+        }
     }
 }
