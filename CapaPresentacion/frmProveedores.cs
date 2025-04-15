@@ -290,5 +290,10 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void txtbusqueda_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
