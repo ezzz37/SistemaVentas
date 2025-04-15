@@ -100,6 +100,7 @@
             txtguardar.TextAlign = ContentAlignment.MiddleRight;
             txtguardar.TextImageRelation = TextImageRelation.ImageBeforeText;
             txtguardar.UseVisualStyleBackColor = true;
+            txtguardar.Click += txtguardar_Click;
             // 
             // txtdireccion
             // 

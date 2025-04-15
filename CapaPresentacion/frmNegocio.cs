@@ -76,5 +76,28 @@ namespace CapaPresentacion
                 MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void txtguardar_Click(object sender, EventArgs e)
+        {
+            string mensaje = string.Empty;
+
+            Negocio obj = new Negocio()
+            {
+                Nombre = txtnombrenegocio.Text,
+                Ruc = txtruc.Text,
+                Direccion = txtdireccion.Text
+            };
+
+            bool respuesta = new CN_Negocio().GuardarDatos(obj, out mensaje);
+
+            if (respuesta)
+            {
+                MessageBox.Show("Datos guardados correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }   
+        }
     }
 }
