@@ -64,7 +64,7 @@
             PrecioVenta = new DataGridViewTextBoxColumn();
             Cantidad = new DataGridViewTextBoxColumn();
             SubTotal = new DataGridViewTextBoxColumn();
-            btnseleccionar = new DataGridViewButtonColumn();
+            btneliminar = new DataGridViewButtonColumn();
             btnagregar = new FontAwesome.Sharp.IconButton();
             label12 = new Label();
             txttotalapagar = new TextBox();
@@ -306,6 +306,7 @@
             txtpreciocompra.Name = "txtpreciocompra";
             txtpreciocompra.Size = new Size(110, 23);
             txtpreciocompra.TabIndex = 28;
+            txtpreciocompra.KeyPress += txtpreciocompra_KeyPress;
             // 
             // txtidproducto
             // 
@@ -338,6 +339,7 @@
             txtcodproducto.Name = "txtcodproducto";
             txtcodproducto.Size = new Size(231, 23);
             txtcodproducto.TabIndex = 2;
+            txtcodproducto.KeyDown += txtcodproducto_KeyDown;
             // 
             // label6
             // 
@@ -373,7 +375,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvdata.Columns.AddRange(new DataGridViewColumn[] { IdProducto, Producto, PrecioCompra, PrecioVenta, Cantidad, SubTotal, btnseleccionar });
+            dgvdata.Columns.AddRange(new DataGridViewColumn[] { IdProducto, Producto, PrecioCompra, PrecioVenta, Cantidad, SubTotal, btneliminar });
             dgvdata.Location = new Point(77, 291);
             dgvdata.MultiSelect = false;
             dgvdata.Name = "dgvdata";
@@ -384,6 +386,8 @@
             dgvdata.RowTemplate.Height = 28;
             dgvdata.Size = new Size(851, 270);
             dgvdata.TabIndex = 26;
+            dgvdata.CellContentClick += dgvdata_CellContentClick;
+            dgvdata.CellPainting += dgvdata_CellPainting;
             // 
             // IdProducto
             // 
@@ -426,12 +430,12 @@
             SubTotal.Name = "SubTotal";
             SubTotal.ReadOnly = true;
             // 
-            // btnseleccionar
+            // btneliminar
             // 
-            btnseleccionar.HeaderText = "";
-            btnseleccionar.Name = "btnseleccionar";
-            btnseleccionar.ReadOnly = true;
-            btnseleccionar.Width = 30;
+            btneliminar.HeaderText = "";
+            btneliminar.Name = "btneliminar";
+            btneliminar.ReadOnly = true;
+            btneliminar.Width = 30;
             // 
             // btnagregar
             // 
@@ -445,6 +449,7 @@
             btnagregar.Text = "Agregar";
             btnagregar.TextImageRelation = TextImageRelation.ImageAboveText;
             btnagregar.UseVisualStyleBackColor = true;
+            btnagregar.Click += btnagregar_Click;
             // 
             // label12
             // 
@@ -537,17 +542,17 @@
         private Label label8;
         private TextBox txtpreciocompra;
         private DataGridView dgvdata;
+        private FontAwesome.Sharp.IconButton btnagregar;
+        private Label label12;
+        private TextBox txttotalapagar;
+        private FontAwesome.Sharp.IconButton btnregistrar;
+        private TextBox txtproducto;
         private DataGridViewTextBoxColumn IdProducto;
         private DataGridViewTextBoxColumn Producto;
         private DataGridViewTextBoxColumn PrecioCompra;
         private DataGridViewTextBoxColumn PrecioVenta;
         private DataGridViewTextBoxColumn Cantidad;
         private DataGridViewTextBoxColumn SubTotal;
-        private DataGridViewButtonColumn btnseleccionar;
-        private FontAwesome.Sharp.IconButton btnagregar;
-        private Label label12;
-        private TextBox txttotalapagar;
-        private FontAwesome.Sharp.IconButton btnregistrar;
-        private TextBox txtproducto;
+        private DataGridViewButtonColumn btneliminar;
     }
 }
