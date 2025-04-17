@@ -501,6 +501,7 @@
             Name = "frmCompras";
             Text = " ";
             Load += frmCompras_Load;
+            KeyPress += frmCompras_KeyPress;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);

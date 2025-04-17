@@ -229,7 +229,33 @@ namespace CapaPresentacion
             }
             else
             {
-                if(txtpreciocompra.Text.Trim().Length == 0 && e.KeyChar.ToString() == ".")
+                if (txtpreciocompra.Text.Trim().Length == 0 && e.KeyChar.ToString() == ".")
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                    if (char.IsControl(e.KeyChar) || e.KeyChar.ToString() == ".")
+                    {
+                        e.Handled = false;
+                    }
+                    else
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
+        }
+
+        private void frmCompras_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (txtprecioventa.Text.Trim().Length == 0 && e.KeyChar.ToString() == ".")
                 {
                     e.Handled = true;
                 }
