@@ -120,7 +120,7 @@ namespace CapaDatos
 
             if (image == null || image.Length == 0)
             {
-                mensaje = "La imagen no es válida.";
+                mensaje = "La imagen no es valida.";
                 return false;
             }
 
