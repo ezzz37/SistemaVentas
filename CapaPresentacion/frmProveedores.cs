@@ -285,15 +285,5 @@ namespace CapaPresentacion
         {
             Limpiar();
         }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtbusqueda_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

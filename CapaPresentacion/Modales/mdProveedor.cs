@@ -96,22 +96,26 @@ namespace CapaPresentacion.Modales
 
         private void dgvdata_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int iRow = e.RowIndex;
-            int iColum = e.ColumnIndex;
-
-            if (iRow >= 0 && iColum > 0)
+            if (e.RowIndex >= 0 && e.ColumnIndex > 0)
             {
-                _Proveedor = new Proveedor()
+                try
                 {
-                    IdProveedor = Convert.ToInt32(dgvdata.Rows[iRow].Cells["IdProveedor"].Value),
-                    Documento = dgvdata.Rows[iRow].Cells["Documento"].Value.ToString(),
-                    RazonSocial = dgvdata.Rows[iRow].Cells["RazonSocial"].Value.ToString(),
-                };
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                    _Proveedor = new Proveedor
+                    {
+                        IdProveedor = Convert.ToInt32(dgvdata.Rows[e.RowIndex].Cells["Id"].Value),
+                        Documento = dgvdata.Rows[e.RowIndex].Cells["Documento"].Value.ToString(),
+                        RazonSocial = dgvdata.Rows[e.RowIndex].Cells["RazonSocial"].Value.ToString()
+                    };
+
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al seleccionar el proveedor: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
-
         private void btnlimpiarbuscador_Click(object sender, EventArgs e)
         {
             txtbusqueda.Text = "";

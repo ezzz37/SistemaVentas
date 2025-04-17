@@ -191,7 +191,6 @@
             txtbusqueda.Name = "txtbusqueda";
             txtbusqueda.Size = new Size(135, 23);
             txtbusqueda.TabIndex = 76;
-            txtbusqueda.TextChanged += txtbusqueda_TextChanged;
             // 
             // cbobusqueda
             // 
@@ -233,7 +232,6 @@
             label10.TabIndex = 72;
             label10.Text = "Lista de Proveedor:";
             label10.TextAlign = ContentAlignment.MiddleLeft;
-            label10.Click += label10_Click;
             // 
             // txtindice
             // 

@@ -45,6 +45,7 @@
             txtidproveedor = new TextBox();
             btnbuscarproveedor = new FontAwesome.Sharp.IconButton();
             groupBox3 = new GroupBox();
+            txtproducto = new TextBox();
             numcantidad = new NumericUpDown();
             label11 = new Label();
             label9 = new Label();
@@ -53,7 +54,6 @@
             txtpreciocompra = new TextBox();
             txtidproducto = new TextBox();
             btnbuscarproducto = new FontAwesome.Sharp.IconButton();
-            cbonombreproducto = new ComboBox();
             txtcodproducto = new TextBox();
             label6 = new Label();
             label7 = new Label();
@@ -227,6 +227,7 @@
             // groupBox3
             // 
             groupBox3.BackColor = Color.White;
+            groupBox3.Controls.Add(txtproducto);
             groupBox3.Controls.Add(numcantidad);
             groupBox3.Controls.Add(label11);
             groupBox3.Controls.Add(label9);
@@ -235,7 +236,6 @@
             groupBox3.Controls.Add(txtpreciocompra);
             groupBox3.Controls.Add(txtidproducto);
             groupBox3.Controls.Add(btnbuscarproducto);
-            groupBox3.Controls.Add(cbonombreproducto);
             groupBox3.Controls.Add(txtcodproducto);
             groupBox3.Controls.Add(label6);
             groupBox3.Controls.Add(label7);
@@ -245,6 +245,13 @@
             groupBox3.TabIndex = 25;
             groupBox3.TabStop = false;
             groupBox3.Text = "Informacion Proveedor";
+            // 
+            // txtproducto
+            // 
+            txtproducto.Location = new Point(303, 51);
+            txtproducto.Name = "txtproducto";
+            txtproducto.Size = new Size(203, 23);
+            txtproducto.TabIndex = 34;
             // 
             // numcantidad
             // 
@@ -323,14 +330,7 @@
             btnbuscarproducto.Size = new Size(45, 23);
             btnbuscarproducto.TabIndex = 26;
             btnbuscarproducto.UseVisualStyleBackColor = false;
-            // 
-            // cbonombreproducto
-            // 
-            cbonombreproducto.FormattingEnabled = true;
-            cbonombreproducto.Location = new Point(303, 51);
-            cbonombreproducto.Name = "cbonombreproducto";
-            cbonombreproducto.Size = new Size(203, 23);
-            cbonombreproducto.TabIndex = 3;
+            btnbuscarproducto.Click += btnbuscarproducto_Click;
             // 
             // txtcodproducto
             // 
@@ -527,7 +527,6 @@
         private GroupBox groupBox3;
         private TextBox txtidproducto;
         private FontAwesome.Sharp.IconButton btnbuscarproducto;
-        private ComboBox cbonombreproducto;
         private TextBox txtcodproducto;
         private Label label6;
         private Label label7;
@@ -549,5 +548,6 @@
         private Label label12;
         private TextBox txttotalapagar;
         private FontAwesome.Sharp.IconButton btnregistrar;
+        private TextBox txtproducto;
     }
 }
