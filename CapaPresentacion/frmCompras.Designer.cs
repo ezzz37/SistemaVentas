@@ -37,11 +37,11 @@
             txtfecha = new TextBox();
             label3 = new Label();
             label2 = new Label();
-            txtnombreproveedor = new ComboBox();
             txtdocproveedor = new TextBox();
             label4 = new Label();
             label5 = new Label();
             groupBox2 = new GroupBox();
+            txtnombreproveedor = new TextBox();
             txtidproveedor = new TextBox();
             btnbuscarproveedor = new FontAwesome.Sharp.IconButton();
             groupBox3 = new GroupBox();
@@ -148,14 +148,6 @@
             label2.TabIndex = 0;
             label2.Text = "Fecha:";
             // 
-            // txtnombreproveedor
-            // 
-            txtnombreproveedor.FormattingEnabled = true;
-            txtnombreproveedor.Location = new Point(271, 51);
-            txtnombreproveedor.Name = "txtnombreproveedor";
-            txtnombreproveedor.Size = new Size(228, 23);
-            txtnombreproveedor.TabIndex = 3;
-            // 
             // txtdocproveedor
             // 
             txtdocproveedor.Location = new Point(6, 51);
@@ -186,9 +178,9 @@
             // groupBox2
             // 
             groupBox2.BackColor = Color.White;
+            groupBox2.Controls.Add(txtnombreproveedor);
             groupBox2.Controls.Add(txtidproveedor);
             groupBox2.Controls.Add(btnbuscarproveedor);
-            groupBox2.Controls.Add(txtnombreproveedor);
             groupBox2.Controls.Add(txtdocproveedor);
             groupBox2.Controls.Add(label4);
             groupBox2.Controls.Add(label5);
@@ -199,12 +191,20 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Informacion Proveedor";
             // 
+            // txtnombreproveedor
+            // 
+            txtnombreproveedor.Location = new Point(271, 51);
+            txtnombreproveedor.Name = "txtnombreproveedor";
+            txtnombreproveedor.Size = new Size(228, 23);
+            txtnombreproveedor.TabIndex = 28;
+            // 
             // txtidproveedor
             // 
             txtidproveedor.Location = new Point(461, 25);
             txtidproveedor.Name = "txtidproveedor";
             txtidproveedor.Size = new Size(38, 23);
             txtidproveedor.TabIndex = 27;
+            txtidproveedor.Visible = false;
             // 
             // btnbuscarproveedor
             // 
@@ -314,6 +314,7 @@
             txtidproducto.Name = "txtidproducto";
             txtidproducto.Size = new Size(41, 23);
             txtidproducto.TabIndex = 27;
+            txtidproducto.Visible = false;
             // 
             // btnbuscarproducto
             // 
@@ -482,12 +483,13 @@
             btnregistrar.Text = "Registrar";
             btnregistrar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnregistrar.UseVisualStyleBackColor = true;
+            btnregistrar.Click += btnregistrar_Click;
             // 
             // frmCompras
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1214, 649);
+            ClientSize = new Size(1214, 659);
             Controls.Add(btnregistrar);
             Controls.Add(txttotalapagar);
             Controls.Add(label12);
@@ -523,7 +525,6 @@
         private TextBox txtfecha;
         private Label label3;
         private Label label2;
-        private ComboBox txtnombreproveedor;
         private TextBox txtdocproveedor;
         private Label label4;
         private Label label5;
@@ -555,5 +556,6 @@
         private DataGridViewTextBoxColumn Cantidad;
         private DataGridViewTextBoxColumn SubTotal;
         private DataGridViewButtonColumn btneliminar;
+        private TextBox txtnombreproveedor;
     }
 }
