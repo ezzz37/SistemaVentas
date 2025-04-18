@@ -63,6 +63,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Byte[].
         /// </summary>
+        internal static byte[] Plantilla_Compra {
+            get {
+                object obj = ResourceManager.GetObject("Plantilla_Compra", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Byte[].
+        /// </summary>
         internal static byte[] trash25 {
             get {
                 object obj = ResourceManager.GetObject("trash25", resourceCulture);
