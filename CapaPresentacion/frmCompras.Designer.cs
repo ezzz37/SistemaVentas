@@ -30,7 +30,6 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            label10 = new Label();
             label1 = new Label();
             groupBox1 = new GroupBox();
             cbotipodocumento = new ComboBox();
@@ -69,24 +68,13 @@
             label12 = new Label();
             txttotalapagar = new TextBox();
             btnregistrar = new FontAwesome.Sharp.IconButton();
+            label10 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numcantidad).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvdata).BeginInit();
             SuspendLayout();
-            // 
-            // label10
-            // 
-            label10.BackColor = Color.White;
-            label10.BorderStyle = BorderStyle.FixedSingle;
-            label10.Font = new Font("Segoe UI", 18F);
-            label10.Location = new Point(50, 27);
-            label10.Name = "label10";
-            label10.Padding = new Padding(2, 0, 0, 0);
-            label10.Size = new Size(1041, 556);
-            label10.TabIndex = 21;
-            label10.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
@@ -485,6 +473,18 @@
             btnregistrar.UseVisualStyleBackColor = true;
             btnregistrar.Click += btnregistrar_Click;
             // 
+            // label10
+            // 
+            label10.BackColor = Color.White;
+            label10.BorderStyle = BorderStyle.FixedSingle;
+            label10.Font = new Font("Segoe UI", 18F);
+            label10.Location = new Point(50, 27);
+            label10.Name = "label10";
+            label10.Padding = new Padding(2, 0, 0, 0);
+            label10.Size = new Size(1041, 556);
+            label10.TabIndex = 21;
+            label10.TextAlign = ContentAlignment.MiddleLeft;
+            // 
             // frmCompras
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -517,8 +517,6 @@
         }
 
         #endregion
-
-        private Label label10;
         private Label label1;
         private GroupBox groupBox1;
         private ComboBox cbotipodocumento;
@@ -557,5 +555,6 @@
         private DataGridViewTextBoxColumn SubTotal;
         private DataGridViewButtonColumn btneliminar;
         private TextBox txtnombreproveedor;
+        private Label label10;
     }
 }

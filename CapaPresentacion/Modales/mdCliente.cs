@@ -14,24 +14,15 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion.Modales
 {
-    public partial class mdProducto : Form
+    public partial class mdCliente : Form
     {
-        public Producto _Producto { get; set; }
-        public mdProducto()
+        public Cliente _Cliente { get; set; }
+        public mdCliente()
         {
             InitializeComponent();
         }
 
-        private void btnlimpiarbuscador_Click(object sender, EventArgs e)
-        {
-            txtbusqueda.Text = "";
-
-            foreach (DataGridViewRow row in dgvdata.Rows)
-            {
-                row.Visible = true;
-            }
-        }
-        private void mdProducto_Load(object sender, EventArgs e)
+        private void mdCliente_Load(object sender, EventArgs e)
         {
             if (dgvdata.Columns.Count > 0)
             {
@@ -51,20 +42,19 @@ namespace CapaPresentacion.Modales
                 MessageBox.Show("No hay columnas definidas en la tabla.");
             }
 
-            List<Producto> listaproducto = new CN_Producto().Listar();
-            if (listaproducto != null && listaproducto.Count > 0)
+            List<Cliente> lista = new CN_Cliente().Listar();
+
+            if (lista != null && lista.Count > 0)
             {
-                foreach (Producto item in listaproducto)
+                foreach (Cliente item in lista)
                 {
-                    dgvdata.Rows.Add(new object[] {
-                        item.IdProducto,
-                        item.Codigo,
-                        item.Nombre,
-                        item.oCategoria?.Descripcion ?? "Sin categoría",
-                        item.Stock,
-                        item.PrecioCompra,
-                        item.PrecioVenta,
-                    });
+                    if (item.Estado)
+                    {
+                        dgvdata.Rows.Add(new object[] {
+                            item.Documento,
+                            item.NombreCompleto,
+                        });
+                    }
                 }
             }
             else
@@ -80,14 +70,10 @@ namespace CapaPresentacion.Modales
 
             if (iRow >= 0 && iColum > 0)
             {
-                _Producto = new Producto()
+                _Cliente = new Cliente()
                 {
-                    IdProducto = Convert.ToInt32(dgvdata.Rows[iRow].Cells["Id"].Value.ToString()),
-                    Codigo = dgvdata.Rows[iRow].Cells["Codigo"].Value.ToString(),
-                    Nombre = dgvdata.Rows[iRow].Cells["Nombre"].Value.ToString(),
-                    Stock = Convert.ToInt32(dgvdata.Rows[iRow].Cells["Stock"].Value.ToString()),
-                    PrecioCompra = Convert.ToDecimal(dgvdata.Rows[iRow].Cells["PrecioCompra"].Value.ToString()),
-                    PrecioVenta = Convert.ToDecimal(dgvdata.Rows[iRow].Cells["PrecioVenta"].Value.ToString()),
+                    Documento = dgvdata.Rows[iRow].Cells["Documento"].Value.ToString(),
+                    NombreCompleto = dgvdata.Rows[iRow].Cells["NombreCompleto"].Value.ToString(),
                 };
                 this.DialogResult = DialogResult.OK;
                 this.Close();
@@ -141,5 +127,14 @@ namespace CapaPresentacion.Modales
             }
         }
 
+        private void btnlimpiarbuscador_Click(object sender, EventArgs e)
+        {
+            txtbusqueda.Text = "";
+
+            foreach (DataGridViewRow row in dgvdata.Rows)
+            {
+                row.Visible = true;
+            }
+        }
     }
 }

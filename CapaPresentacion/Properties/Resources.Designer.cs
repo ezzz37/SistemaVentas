@@ -79,5 +79,15 @@ namespace CapaPresentacion.Properties {
                 return ((byte[])(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Byte[].
+        /// </summary>
+        internal static byte[] visto20_px {
+            get {
+                object obj = ResourceManager.GetObject("visto20_px", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

@@ -366,7 +366,7 @@
             txtguardar.IconColor = Color.Black;
             txtguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             txtguardar.IconSize = 25;
-            txtguardar.Location = new Point(725, 613);
+            txtguardar.Location = new Point(725, 618);
             txtguardar.Name = "txtguardar";
             txtguardar.Size = new Size(142, 28);
             txtguardar.TabIndex = 65;
@@ -395,6 +395,7 @@
             Controls.Add(label10);
             Name = "frmDetalleCompra";
             Text = "frmDetalleCompra";
+            Load += frmDetalleCompra_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
