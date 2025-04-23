@@ -92,6 +92,7 @@
             btnregistrar.Text = "Crear Venta";
             btnregistrar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnregistrar.UseVisualStyleBackColor = true;
+            btnregistrar.Click += btnregistrar_Click;
             // 
             // label12
             // 
