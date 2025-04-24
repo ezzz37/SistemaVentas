@@ -395,7 +395,6 @@
             Controls.Add(label10);
             Name = "frmDetalleCompra";
             Text = "frmDetalleCompra";
-            Load += frmDetalleCompra_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
