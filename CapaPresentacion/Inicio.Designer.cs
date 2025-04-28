@@ -33,6 +33,7 @@
             menuMantenedor = new FontAwesome.Sharp.IconMenuItem();
             submenuCategoria = new FontAwesome.Sharp.IconMenuItem();
             submenuProducto = new FontAwesome.Sharp.IconMenuItem();
+            submenunegocio = new ToolStripMenuItem();
             menuVentas = new FontAwesome.Sharp.IconMenuItem();
             submenuregistrarventa = new FontAwesome.Sharp.IconMenuItem();
             submenuverdetalleventa = new FontAwesome.Sharp.IconMenuItem();
@@ -48,7 +49,8 @@
             usuarioToolStripMenuItem = new ToolStripMenuItem();
             label1 = new Label();
             contenedor = new Panel();
-            submenunegocio = new ToolStripMenuItem();
+            submenureportecompras = new ToolStripMenuItem();
+            submenureporteventas = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             menuTitulo.SuspendLayout();
             SuspendLayout();
@@ -97,7 +99,7 @@
             submenuCategoria.IconColor = Color.Black;
             submenuCategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
             submenuCategoria.Name = "submenuCategoria";
-            submenuCategoria.Size = new Size(180, 22);
+            submenuCategoria.Size = new Size(125, 22);
             submenuCategoria.Text = "Categoria";
             submenuCategoria.Click += iconMenuItem1_Click;
             // 
@@ -107,9 +109,16 @@
             submenuProducto.IconColor = Color.Black;
             submenuProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
             submenuProducto.Name = "submenuProducto";
-            submenuProducto.Size = new Size(180, 22);
+            submenuProducto.Size = new Size(125, 22);
             submenuProducto.Text = "Producto";
             submenuProducto.Click += submenuProducto_Click;
+            // 
+            // submenunegocio
+            // 
+            submenunegocio.Name = "submenunegocio";
+            submenunegocio.Size = new Size(125, 22);
+            submenunegocio.Text = "Negocio";
+            submenunegocio.Click += submenunegocio_Click;
             // 
             // menuVentas
             // 
@@ -210,6 +219,7 @@
             // menuReportes
             // 
             menuReportes.AutoSize = false;
+            menuReportes.DropDownItems.AddRange(new ToolStripItem[] { submenureportecompras, submenureporteventas });
             menuReportes.IconChar = FontAwesome.Sharp.IconChar.BarChart;
             menuReportes.IconColor = Color.Black;
             menuReportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -219,7 +229,6 @@
             menuReportes.Size = new Size(80, 69);
             menuReportes.Text = "Reportes";
             menuReportes.TextImageRelation = TextImageRelation.ImageAboveText;
-            menuReportes.Click += menuReportes_Click;
             // 
             // menuAcercaDe
             // 
@@ -286,12 +295,19 @@
             contenedor.Size = new Size(1162, 567);
             contenedor.TabIndex = 3;
             // 
-            // submenunegocio
+            // submenureportecompras
             // 
-            submenunegocio.Name = "submenunegocio";
-            submenunegocio.Size = new Size(180, 22);
-            submenunegocio.Text = "Negocio";
-            submenunegocio.Click += submenunegocio_Click;
+            submenureportecompras.Name = "submenureportecompras";
+            submenureportecompras.Size = new Size(180, 22);
+            submenureportecompras.Text = "Reporte Compras";
+            submenureportecompras.Click += submenureportecompras_Click;
+            // 
+            // submenureporteventas
+            // 
+            submenureporteventas.Name = "submenureporteventas";
+            submenureporteventas.Size = new Size(180, 22);
+            submenureporteventas.Text = "Reporte Ventas";
+            submenureporteventas.Click += submenureporteventas_Click;
             // 
             // Inicio
             // 
@@ -339,5 +355,7 @@
         private FontAwesome.Sharp.IconMenuItem submenuregistrarcompra;
         private FontAwesome.Sharp.IconMenuItem submenuverdetallecompra;
         private ToolStripMenuItem submenunegocio;
+        private ToolStripMenuItem submenureportecompras;
+        private ToolStripMenuItem submenureporteventas;
     }
 }
