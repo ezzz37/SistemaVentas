@@ -21,9 +21,9 @@ namespace CapaDatos
                 {
                     StringBuilder query = new StringBuilder();
                     SqlCommand cmd = new SqlCommand("SP_REPORTECOMPRAS", oconexion);
-                    cmd.Parameters.AddWithValue("fechainicio", fechainicio);
-                    cmd.Parameters.AddWithValue("fechafin", fechafin);
-                    cmd.Parameters.AddWithValue("idproveedor", idproveedor);
+                    cmd.Parameters.AddWithValue("@fechainicio", fechainicio);
+                    cmd.Parameters.AddWithValue("@fechafin", fechafin);
+                    cmd.Parameters.AddWithValue("@idproveedor", idproveedor);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     oconexion.Open();
