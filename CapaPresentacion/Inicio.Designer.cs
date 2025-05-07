@@ -57,11 +57,14 @@
             // 
             // menuStrip1
             // 
+            menuStrip1.AutoSize = false;
             menuStrip1.Items.AddRange(new ToolStripItem[] { menuUsuario, menuMantenedor, menuVentas, menuCompras, menuClientes, menuProveedores, menuReportes, menuAcercaDe });
             menuStrip1.Location = new Point(0, 78);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1162, 73);
+            menuStrip1.ShowItemToolTips = true;
+            menuStrip1.Size = new Size(1368, 73);
             menuStrip1.TabIndex = 0;
+            menuStrip1.TabStop = true;
             menuStrip1.Text = "menuStrip1";
             // 
             // menuUsuario
@@ -164,7 +167,7 @@
             menuCompras.IconSize = 50;
             menuCompras.ImageScaling = ToolStripItemImageScaling.None;
             menuCompras.Name = "menuCompras";
-            menuCompras.Size = new Size(80, 60);
+            menuCompras.Size = new Size(80, 69);
             menuCompras.Text = "Compras";
             menuCompras.TextImageRelation = TextImageRelation.ImageAboveText;
             // 
@@ -266,7 +269,7 @@
             menuTitulo.Location = new Point(0, 0);
             menuTitulo.Name = "menuTitulo";
             menuTitulo.RightToLeft = RightToLeft.Yes;
-            menuTitulo.Size = new Size(1162, 78);
+            menuTitulo.Size = new Size(1368, 78);
             menuTitulo.TabIndex = 1;
             menuTitulo.Text = "menuStrip2";
             menuTitulo.ItemClicked += menuStrip2_ItemClicked;
@@ -304,10 +307,10 @@
             // 
             // contenedor
             // 
-            contenedor.Dock = DockStyle.Fill;
-            contenedor.Location = new Point(0, 151);
+            contenedor.AutoSize = true;
+            contenedor.Location = new Point(0, 154);
             contenedor.Name = "contenedor";
-            contenedor.Size = new Size(1162, 567);
+            contenedor.Size = new Size(1368, 732);
             contenedor.TabIndex = 3;
             // 
             // Inicio
@@ -315,10 +318,10 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1162, 718);
+            ClientSize = new Size(1368, 883);
+            Controls.Add(menuStrip1);
             Controls.Add(contenedor);
             Controls.Add(label1);
-            Controls.Add(menuStrip1);
             Controls.Add(menuTitulo);
             MainMenuStrip = menuStrip1;
             Name = "Inicio";

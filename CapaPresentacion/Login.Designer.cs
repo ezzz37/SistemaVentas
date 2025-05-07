@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             label1 = new Label();
             label2 = new Label();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
@@ -37,7 +38,10 @@
             label4 = new Label();
             Ingresar = new FontAwesome.Sharp.IconButton();
             Cancelar = new FontAwesome.Sharp.IconButton();
+            label5 = new Label();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -158,12 +162,35 @@
             Cancelar.UseVisualStyleBackColor = false;
             Cancelar.Click += iconButton2_Click;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 15F);
+            label5.Location = new Point(287, 21);
+            label5.Name = "label5";
+            label5.Size = new Size(151, 28);
+            label5.TabIndex = 9;
+            label5.Text = "INICIAR SESION";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.ErrorImage = (Image)resources.GetObject("pictureBox1.ErrorImage");
+            pictureBox1.Image = Properties.Resources.programa__2_;
+            pictureBox1.InitialImage = (Image)resources.GetObject("pictureBox1.InitialImage");
+            pictureBox1.Location = new Point(444, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(78, 66);
+            pictureBox1.TabIndex = 10;
+            pictureBox1.TabStop = false;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(603, 256);
+            Controls.Add(pictureBox1);
+            Controls.Add(label5);
             Controls.Add(Cancelar);
             Controls.Add(Ingresar);
             Controls.Add(label4);
@@ -178,6 +205,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -193,5 +221,7 @@
         private Label label4;
         private FontAwesome.Sharp.IconButton Ingresar;
         private FontAwesome.Sharp.IconButton Cancelar;
+        private Label label5;
+        private PictureBox pictureBox1;
     }
 }

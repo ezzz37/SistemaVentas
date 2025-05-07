@@ -138,7 +138,7 @@ namespace CapaPresentacion
 
         private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if (e.RowIndex < 0 || e.ColumnIndex != 0)
+            if (e.RowIndex < 0)
             {
                 return;
             }
@@ -147,25 +147,16 @@ namespace CapaPresentacion
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
-                string imagePath = @"C:\Users\Ezequ\Desktop\SistemaDeVentas\CapaPresentacion\imagenes\visto20.png";
-
-                if (File.Exists(imagePath))
+                using (var image = Image.FromStream(new MemoryStream(Properties.Resources.Visto20)))
                 {
-                    using (Image img = Image.FromFile(imagePath))
-                    {
-                        var w = img.Width;
-                        var h = img.Height;
-                        var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
-                        var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+                    var w = image.Width;
+                    var h = image.Height;
+                    var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                    var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
 
-                        e.Graphics.DrawImage(img, new Rectangle(x, y, w, h));
-                        e.Handled = true;
-                    }
+                    e.Graphics.DrawImage(image, new Rectangle(x, y, w, h));
                 }
-                else
-                {
-                    Console.WriteLine("La imagen no existe en la ruta especificada.");
-                }
+                e.Handled = true;
             }
         }
 
