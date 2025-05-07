@@ -73,7 +73,7 @@
             txtguardar.IconColor = Color.Black;
             txtguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             txtguardar.IconSize = 25;
-            txtguardar.Location = new Point(802, 589);
+            txtguardar.Location = new Point(844, 605);
             txtguardar.Name = "txtguardar";
             txtguardar.Size = new Size(154, 31);
             txtguardar.TabIndex = 77;
@@ -85,7 +85,7 @@
             // 
             // txtmontototal
             // 
-            txtmontototal.Location = new Point(394, 593);
+            txtmontototal.Location = new Point(436, 609);
             txtmontototal.Name = "txtmontototal";
             txtmontototal.Size = new Size(56, 23);
             txtmontototal.TabIndex = 76;
@@ -96,7 +96,7 @@
             label5.AutoSize = true;
             label5.BackColor = Color.White;
             label5.Font = new Font("Segoe UI", 11F);
-            label5.Location = new Point(295, 593);
+            label5.Location = new Point(337, 609);
             label5.Name = "label5";
             label5.Size = new Size(93, 20);
             label5.TabIndex = 75;
@@ -117,7 +117,7 @@
             dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvdata.Columns.AddRange(new DataGridViewColumn[] { Producto, Precio, Cantidad, SubTotal });
-            dgvdata.Location = new Point(295, 303);
+            dgvdata.Location = new Point(337, 319);
             dgvdata.MultiSelect = false;
             dgvdata.Name = "dgvdata";
             dgvdata.ReadOnly = true;
@@ -162,7 +162,7 @@
             groupBox2.Controls.Add(txtdoccliente);
             groupBox2.Controls.Add(label6);
             groupBox2.Controls.Add(label7);
-            groupBox2.Location = new Point(295, 209);
+            groupBox2.Location = new Point(337, 225);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(661, 88);
             groupBox2.TabIndex = 73;
@@ -220,7 +220,7 @@
             groupBox1.Controls.Add(txtfecha);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(295, 105);
+            groupBox1.Location = new Point(337, 121);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(661, 88);
             groupBox1.TabIndex = 72;
@@ -289,7 +289,7 @@
             btnbuscar.IconColor = Color.Black;
             btnbuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnbuscar.IconSize = 18;
-            btnbuscar.Location = new Point(862, 62);
+            btnbuscar.Location = new Point(904, 78);
             btnbuscar.Name = "btnbuscar";
             btnbuscar.Size = new Size(45, 23);
             btnbuscar.TabIndex = 70;
@@ -307,7 +307,7 @@
             btnlimpiarbuscador.IconColor = Color.Black;
             btnlimpiarbuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnlimpiarbuscador.IconSize = 18;
-            btnlimpiarbuscador.Location = new Point(913, 62);
+            btnlimpiarbuscador.Location = new Point(955, 78);
             btnlimpiarbuscador.Name = "btnlimpiarbuscador";
             btnlimpiarbuscador.Size = new Size(43, 23);
             btnlimpiarbuscador.TabIndex = 71;
@@ -317,7 +317,7 @@
             // 
             // txtnumerodocumento
             // 
-            txtnumerodocumento.Location = new Point(676, 62);
+            txtnumerodocumento.Location = new Point(718, 78);
             txtnumerodocumento.Name = "txtnumerodocumento";
             txtnumerodocumento.Size = new Size(180, 23);
             txtnumerodocumento.TabIndex = 69;
@@ -327,7 +327,7 @@
             txtbuscarpor.AutoSize = true;
             txtbuscarpor.BackColor = Color.White;
             txtbuscarpor.Font = new Font("Segoe UI", 10F);
-            txtbuscarpor.Location = new Point(532, 62);
+            txtbuscarpor.Location = new Point(574, 78);
             txtbuscarpor.Name = "txtbuscarpor";
             txtbuscarpor.Size = new Size(138, 19);
             txtbuscarpor.TabIndex = 68;
@@ -338,7 +338,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.White;
             label1.Font = new Font("Segoe UI", 20F);
-            label1.Location = new Point(295, 22);
+            label1.Location = new Point(337, 38);
             label1.Name = "label1";
             label1.Size = new Size(212, 37);
             label1.TabIndex = 67;
@@ -349,7 +349,7 @@
             label10.BackColor = Color.White;
             label10.BorderStyle = BorderStyle.FixedSingle;
             label10.Font = new Font("Segoe UI", 18F);
-            label10.Location = new Point(277, 9);
+            label10.Location = new Point(319, 25);
             label10.Name = "label10";
             label10.Padding = new Padding(2, 0, 0, 0);
             label10.Size = new Size(709, 662);
@@ -358,7 +358,7 @@
             // 
             // txtmontopago
             // 
-            txtmontopago.Location = new Point(555, 594);
+            txtmontopago.Location = new Point(597, 610);
             txtmontopago.Name = "txtmontopago";
             txtmontopago.Size = new Size(56, 23);
             txtmontopago.TabIndex = 79;
@@ -369,7 +369,7 @@
             label8.AutoSize = true;
             label8.BackColor = Color.White;
             label8.Font = new Font("Segoe UI", 11F);
-            label8.Location = new Point(456, 594);
+            label8.Location = new Point(498, 610);
             label8.Name = "label8";
             label8.Size = new Size(93, 20);
             label8.TabIndex = 78;
@@ -377,7 +377,7 @@
             // 
             // txtmontocambio
             // 
-            txtmontocambio.Location = new Point(732, 594);
+            txtmontocambio.Location = new Point(774, 610);
             txtmontocambio.Name = "txtmontocambio";
             txtmontocambio.Size = new Size(56, 23);
             txtmontocambio.TabIndex = 81;
@@ -388,7 +388,7 @@
             label9.AutoSize = true;
             label9.BackColor = Color.White;
             label9.Font = new Font("Segoe UI", 11F);
-            label9.Location = new Point(617, 594);
+            label9.Location = new Point(659, 610);
             label9.Name = "label9";
             label9.Size = new Size(112, 20);
             label9.TabIndex = 80;
@@ -398,7 +398,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1358, 703);
+            ClientSize = new Size(1358, 714);
             Controls.Add(txtmontocambio);
             Controls.Add(label9);
             Controls.Add(txtmontopago);

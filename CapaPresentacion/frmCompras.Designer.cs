@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             label1 = new Label();
             groupBox1 = new GroupBox();
             cbotipodocumento = new ComboBox();
@@ -81,7 +81,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.White;
             label1.Font = new Font("Segoe UI", 20F);
-            label1.Location = new Point(77, 48);
+            label1.Location = new Point(196, 57);
             label1.Name = "label1";
             label1.Size = new Size(223, 37);
             label1.TabIndex = 22;
@@ -94,7 +94,7 @@
             groupBox1.Controls.Add(txtfecha);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(77, 103);
+            groupBox1.Location = new Point(196, 112);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(472, 88);
             groupBox1.TabIndex = 23;
@@ -172,7 +172,7 @@
             groupBox2.Controls.Add(txtdocproveedor);
             groupBox2.Controls.Add(label4);
             groupBox2.Controls.Add(label5);
-            groupBox2.Location = new Point(555, 103);
+            groupBox2.Location = new Point(674, 112);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(515, 88);
             groupBox2.TabIndex = 24;
@@ -227,7 +227,7 @@
             groupBox3.Controls.Add(txtcodproducto);
             groupBox3.Controls.Add(label6);
             groupBox3.Controls.Add(label7);
-            groupBox3.Location = new Point(77, 197);
+            groupBox3.Location = new Point(196, 206);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(851, 88);
             groupBox3.TabIndex = 25;
@@ -354,24 +354,24 @@
             // 
             dgvdata.AllowUserToAddRows = false;
             dgvdata.BackgroundColor = Color.White;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.Padding = new Padding(2);
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvdata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvdata.Columns.AddRange(new DataGridViewColumn[] { IdProducto, Producto, PrecioCompra, PrecioVenta, Cantidad, SubTotal, btneliminar });
-            dgvdata.Location = new Point(77, 291);
+            dgvdata.Location = new Point(196, 300);
             dgvdata.MultiSelect = false;
             dgvdata.Name = "dgvdata";
             dgvdata.ReadOnly = true;
-            dataGridViewCellStyle2.SelectionBackColor = Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
-            dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.SelectionBackColor = Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
+            dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dgvdata.RowTemplate.Height = 28;
             dgvdata.Size = new Size(851, 270);
             dgvdata.TabIndex = 26;
@@ -431,7 +431,7 @@
             btnagregar.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
             btnagregar.IconColor = Color.DarkGreen;
             btnagregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnagregar.Location = new Point(934, 206);
+            btnagregar.Location = new Point(1053, 215);
             btnagregar.Name = "btnagregar";
             btnagregar.Size = new Size(136, 79);
             btnagregar.TabIndex = 27;
@@ -444,7 +444,7 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 11F);
-            label12.Location = new Point(934, 472);
+            label12.Location = new Point(1053, 481);
             label12.Name = "label12";
             label12.Size = new Size(98, 20);
             label12.TabIndex = 28;
@@ -452,7 +452,7 @@
             // 
             // txttotalapagar
             // 
-            txttotalapagar.Location = new Point(934, 495);
+            txttotalapagar.Location = new Point(1053, 504);
             txttotalapagar.Name = "txttotalapagar";
             txttotalapagar.Size = new Size(136, 23);
             txttotalapagar.TabIndex = 29;
@@ -464,7 +464,7 @@
             btnregistrar.IconColor = Color.RoyalBlue;
             btnregistrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnregistrar.IconSize = 35;
-            btnregistrar.Location = new Point(934, 524);
+            btnregistrar.Location = new Point(1053, 533);
             btnregistrar.Name = "btnregistrar";
             btnregistrar.Size = new Size(136, 37);
             btnregistrar.TabIndex = 30;
@@ -478,7 +478,7 @@
             label10.BackColor = Color.White;
             label10.BorderStyle = BorderStyle.FixedSingle;
             label10.Font = new Font("Segoe UI", 18F);
-            label10.Location = new Point(50, 27);
+            label10.Location = new Point(169, 36);
             label10.Name = "label10";
             label10.Padding = new Padding(2, 0, 0, 0);
             label10.Size = new Size(1041, 556);
@@ -489,7 +489,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1214, 659);
+            ClientSize = new Size(1374, 629);
             Controls.Add(btnregistrar);
             Controls.Add(txttotalapagar);
             Controls.Add(label12);

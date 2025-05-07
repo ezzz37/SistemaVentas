@@ -57,7 +57,6 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.AutoSize = false;
             menuStrip1.Items.AddRange(new ToolStripItem[] { menuUsuario, menuMantenedor, menuVentas, menuCompras, menuClientes, menuProveedores, menuReportes, menuAcercaDe });
             menuStrip1.Location = new Point(0, 78);
             menuStrip1.Name = "menuStrip1";

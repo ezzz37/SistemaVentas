@@ -308,7 +308,7 @@
             label1.Dock = DockStyle.Left;
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(221, 539);
+            label1.Size = new Size(221, 513);
             label1.TabIndex = 28;
             // 
             // label8
@@ -335,7 +335,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1094, 539);
+            ClientSize = new Size(1087, 513);
             Controls.Add(btnbuscar);
             Controls.Add(dgvdata);
             Controls.Add(btnlimpiarbuscador);
